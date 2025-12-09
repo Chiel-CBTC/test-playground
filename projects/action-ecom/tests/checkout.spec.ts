@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Checkout Flow @Sc3fee8e8', () => {
-  test('should complete checkout flow with iDeal payment @T44c73ae5', async ({ page }) => {
+test.describe('Checkout Flow', () => {
+  test('should complete checkout flow with iDeal payment', async ({ page }) => {
     // Navigate to the main page
     await page.goto('/nl-nl');
     await page.waitForLoadState('networkidle');

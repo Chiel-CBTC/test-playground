@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Main Page Tests @S058cab54', () => {
-  test('should access the main page after SSO login @T3b445d5a', async ({ page }) => {
+test.describe('Main Page Tests', () => {
+  test('should access the main page after SSO login', async ({ page }) => {
     // Navigate to the main page
     await page.goto('/nl-nl');
     
@@ -15,7 +15,7 @@ test.describe('Main Page Tests @S058cab54', () => {
     await page.screenshot({ path: 'screenshots/main-page.png', fullPage: true });
   });
 
-  test('should be able to interact with the page @T0682ca3c', async ({ page }) => {
+  test('should be able to interact with the page', async ({ page }) => {
     await page.goto('/nl-nl');
     await page.waitForLoadState('networkidle');
     
