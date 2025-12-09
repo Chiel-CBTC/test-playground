@@ -9,7 +9,7 @@ const automatedTestCases = addressTestCases.filter(tc =>
 
 // Generate individual test for each case
 automatedTestCases.forEach((testCase) => {
-  test(`AEC-1472 ${testCase.testId} - ${testCase.notes}`, async ({ page }) => {
+  test(`AEC-1472: ${testCase.testId} - ${testCase.notes}`, async ({ page }) => {
     const addressField = buildAddressField(
       testCase.streetName,
       testCase.houseNumber,
