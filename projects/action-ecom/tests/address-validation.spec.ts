@@ -271,6 +271,10 @@ test.describe('Address Validation - Street Names @Sd2d05ba0', () => {
   test('AEC-1472: ST-007 - Professor Doctor Jan van der Waals Straat met een hele lange naam 1 - Test maximum street name length @Tc823e0dd', async ({ page }) => {
     await runAddressTest(page, getTestCase('ST-007'));
   });
+  
+  test('AEC-1472: ST-008 - Kempenaar 15 14 - Street name that contains a number @T436b16ae', async ({ page }) => {
+    await runAddressTest(page, getTestCase('ST-008'));
+  });
 });
 
 // ============================
