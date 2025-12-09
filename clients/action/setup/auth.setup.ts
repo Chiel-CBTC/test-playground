@@ -2,7 +2,7 @@ import { test as setup, expect } from '@playwright/test';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 
-const authFile = '.auth/user.json';
+const authFile = 'clients/action/.auth/user.json';
 
 setup('authenticate', async ({ page }) => {
   console.log('Starting authentication flow...');

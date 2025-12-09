@@ -1,6 +1,18 @@
-# Playwright SSO Testing Framework
+# Playwright Multi-Client Testing Framework
 
-This framework allows you to test the SSO-protected page at `https://shop-staging.action.com/nl-nl` using Playwright.
+This framework allows you to test multiple client applications using Playwright with isolated authentication and test suites for each client.
+
+## Architecture
+
+The framework supports multiple clients with isolated:
+- Test suites
+- Authentication states
+- Helper functions
+- Test data
+- Environment configurations
+
+### Current Clients
+- **Action** - E-commerce testing suite with checkout and address validation tests
 
 ## Setup
 
@@ -13,90 +25,94 @@ npx playwright install chromium
 
 ### 2. Configure Credentials
 
-There are two options for authentication:
+Create a `.env` file with credentials for each client:
 
-#### Option A: Manual Login (Recommended for first-time setup)
+```bash
+cp .env.example .env
+```
 
-1. Open `tests/auth.setup.ts`
-2. Uncomment the line: `// await page.pause();`
-3. Run the authentication setup:
-   ```bash
-   npm run auth:setup
-   ```
-4. The browser will pause at the login page - manually log in with your credentials
-5. After successful login, press "Resume" in the Playwright inspector
-6. The authentication state will be saved to `.auth/user.json`
+Edit `.env` and add your credentials:
+```
+# Action Client
+SSO_USERNAME=your-email@example.com
+SSO_PASSWORD=your-password
+CHECKOUT_EMAIL=test@example.com
+CHECKOUT_FIRSTNAME=Jan
+CHECKOUT_LASTNAME=Jansen
+CHECKOUT_PHONE=0612345678
+CHECKOUT_POSTCODE=1234AB
+CHECKOUT_CITY=Amsterdam
 
-#### Option B: Automated Login
+# Add credentials for other clients here
+```
 
-1. Copy the example environment file:
-   ```bash
-   cp .env.example .env
-   ```
+### 3. Run Authentication Setup
 
-2. Edit `.env` and add your credentials:
-   ```
-   SSO_USERNAME=your-email@example.com
-   SSO_PASSWORD=your-password
-   ```
+Each client needs to authenticate once:
 
-3. Update the selectors in `tests/auth.setup.ts`:
-   - Open the SSO login page in a browser
-   - Right-click on the username/email field and inspect it
-   - Copy the appropriate selector (id, name, type, etc.)
-   - Update the `page.fill()` selectors in `auth.setup.ts`
-   - Do the same for the password field and submit button
+```bash
+# Action client
+npm run auth:setup:action
+
+# Future clients
+# npm run auth:setup:client2
+```
 
 ## Usage
 
-### Run Authentication Setup
+### Run All Tests (All Clients)
 
 ```bash
-npm run auth:setup
-```
-
-This creates the `.auth/user.json` file with your authenticated session.
-
-### Run Tests
-
-```bash
-# Run all tests (browser visible, one at a time)
+# Run all clients (headless, 6 workers in parallel - DEFAULT)
 npm test
 
-# Run all tests in parallel (6 workers, faster)
-npm run test:parallel
+# Run all clients with browser visible
+npm run test:headed
 
-# Run tests in headless mode
-npm run test:headless
+# Run all clients serially (one at a time, useful for debugging)
+npm run test:serial
 
 # Run tests in debug mode
 npm run test:debug
 ```
 
-### Run Specific Tests
-
-**IMPORTANT:** When using npm scripts, you must use `--` before the `-g` flag to pass arguments correctly to Playwright.
+### Run Tests for Specific Client
 
 ```bash
-# Run a specific test file
-npm test tests/checkout.spec.ts
+# Action client - headless (6 workers in parallel - DEFAULT)
+npm run test:action
 
-# Run a single test by exact name (using npm)
-npm test tests/address-validation.spec.ts -- -g "BT-001 - Empty addition should be allowed"
+# Action client - with browser visible
+npm run test:action:headed
 
-# Run multiple tests matching a pattern (using npm)
-npm test tests/address-validation.spec.ts -- -g "BT-00"
-
-# Run all tests in a category (using npm)
-npm test tests/address-validation.spec.ts -- -g "Boundary"
-
-# Alternative: Call Playwright directly (no -- needed)
-npx playwright test --headed tests/address-validation.spec.ts -g "BT-001 - Empty addition should be allowed"
+# Action client - serial execution (one at a time, useful for debugging)
+npm run test:action:serial
 ```
 
-### Address Validation Tests
+### Run Specific Tests
 
-The framework includes 78 automated address validation tests covering:
+**IMPORTANT:** When using npm scripts, you must use `--` before additional flags to pass arguments correctly to Playwright.
+
+```bash
+# Run a specific test file for Action client
+npm run test:action clients/action/tests/checkout.spec.ts
+
+# Run a single test by exact name
+npm run test:action clients/action/tests/address-validation.spec.ts -- -g "BT-001 - Empty addition should be allowed"
+
+# Run multiple tests matching a pattern
+npm run test:action clients/action/tests/address-validation.spec.ts -- -g "BT-00"
+
+# Run all tests in a category
+npm run test:action clients/action/tests/address-validation.spec.ts -- -g "Boundary"
+
+# Alternative: Call Playwright directly (no -- needed)
+npx playwright test --headed --project=action-chromium clients/action/tests/address-validation.spec.ts -g "BT-001"
+```
+
+### Action Client - Address Validation Tests
+
+The Action client includes 78 automated address validation tests covering:
 - Boundary testing (addition length, house number length)
 - Realistic Dutch addresses (common additions like "bis", "boven", "beneden")
 - Street name validation
@@ -119,58 +135,87 @@ The framework includes 78 automated address validation tests covering:
 **Run specific test categories:**
 
 ```bash
-# Run all boundary tests
-npm test tests/address-validation.spec.ts -- -g "^BT-"
+# Run all boundary tests (headless by default)
+npm run test:action clients/action/tests/address-validation.spec.ts -- -g "^BT-"
 
-# Run all realistic Dutch address tests
-npm test tests/address-validation.spec.ts -- -g "^NL-"
+# Run all realistic Dutch address tests (headless by default)
+npm run test:action clients/action/tests/address-validation.spec.ts -- -g "^NL-"
 
-# Run Critical priority tests
-npm test tests/address-validation.spec.ts -- -g "Critical"
+# Run Critical priority tests (headless by default)
+npm run test:action clients/action/tests/address-validation.spec.ts -- -g "Critical"
+
+# Run all address validation tests (parallel, headless by default)
+npm run test:action clients/action/tests/address-validation.spec.ts
 
 # Run all address validation tests serially
-npm test tests/address-validation.spec.ts
-
-# Run all address validation tests in parallel
-npm run test:parallel tests/address-validation.spec.ts
+npm run test:action:serial clients/action/tests/address-validation.spec.ts
 ```
 
 **Happy Flow Test:**
 ```bash
-# BT-001 is the recommended happy flow test
-npm test tests/address-validation.spec.ts -- -g "BT-001 - Empty addition should be allowed"
+# BT-001 is the recommended happy flow test (headless by default)
+npm run test:action clients/action/tests/address-validation.spec.ts -- -g "BT-001 - Empty addition should be allowed"
 ```
 
 ## Project Structure
 
 ```
 .
-├── tests/
-│   ├── auth.setup.ts               # Authentication setup script
-│   ├── checkout.spec.ts            # Checkout flow test
-│   ├── address-validation.spec.ts  # Address validation tests (78 tests)
-│   ├── main-page.spec.ts           # Main page test suite
-│   └── helpers/
-│       └── checkout-helper.ts      # Reusable checkout flow helper
-├── test-data/
-│   └── address-test-cases.ts       # Test data for address validation
-├── .auth/
-│   └── user.json                   # Stored authentication state (auto-generated)
-├── screenshots/
-│   └── address-tests/              # Address test screenshots (auto-generated)
-├── playwright.config.ts            # Playwright configuration
-├── .env                            # Your credentials (not in git)
-├── .env.example                    # Example credentials file
-├── tsconfig.json                   # TypeScript configuration
-└── package.json                    # Dependencies and scripts
+├── clients/                        # All client test suites
+│   ├── _template/                  # Template for new clients
+│   │   ├── README.md              # Instructions for adding new clients
+│   │   ├── setup/                 # Authentication setup
+│   │   ├── tests/                 # Test specs
+│   │   ├── helpers/               # Helper functions
+│   │   ├── test-data/             # Test data
+│   │   └── .auth/                 # Auth state (auto-generated)
+│   │
+│   └── action/                    # Action client
+│       ├── setup/
+│       │   └── auth.setup.ts      # Authentication setup
+│       ├── tests/
+│       │   ├── checkout.spec.ts   # Checkout flow tests
+│       │   ├── address-validation.spec.ts  # Address validation (78 tests)
+│       │   └── main-page.spec.ts  # Main page tests
+│       ├── helpers/
+│       │   └── checkout-helper.ts # Reusable checkout helper
+│       ├── test-data/
+│       │   └── address-test-cases.ts  # Test data
+│       └── .auth/
+│           └── user.json          # Auth state (auto-generated)
+│
+├── screenshots/                   # Test screenshots (auto-generated)
+├── playwright.config.ts           # Playwright configuration
+├── .env                           # Your credentials (not in git)
+├── .gitignore                     # Git ignore rules
+├── tsconfig.json                  # TypeScript configuration
+└── package.json                   # Dependencies and scripts
 ```
 
 ## How It Works
 
-1. The `setup` project runs first and executes `auth.setup.ts`
-2. This logs into the SSO-protected site and saves cookies/storage to `.auth/user.json`
-3. All subsequent tests use this saved authentication state
-4. Tests can now access protected pages without re-authenticating
+1. Each client has its own setup project (e.g., `action-setup`) that runs first
+2. The setup executes the client's `auth.setup.ts` and saves authentication state
+3. All subsequent tests for that client use the saved authentication state
+4. Tests can access protected pages without re-authenticating
+5. Each client is completely isolated with its own:
+   - Authentication state
+   - Test files
+   - Helper functions
+   - Test data
+   - Base URL configuration
+
+## Adding a New Client
+
+See `clients/_template/README.md` for detailed instructions on adding a new client.
+
+Quick steps:
+1. Copy `clients/_template` to `clients/yourclient`
+2. Update authentication setup in `setup/auth.setup.ts`
+3. Add your tests in `tests/`
+4. Update `playwright.config.ts` to add your client projects
+5. Add npm scripts in `package.json`
+6. Add environment variables in `.env`
 
 ## Test Configuration
 
@@ -179,29 +224,40 @@ npm test tests/address-validation.spec.ts -- -g "BT-001 - Empty addition should 
 Update your `.env` file with the following variables:
 
 ```bash
-# SSO Login Credentials
+# Action Client
 SSO_USERNAME=your-email@example.com
 SSO_PASSWORD=your-password
-
-# Checkout Form Data (used in all address validation tests)
 CHECKOUT_EMAIL=test@example.com
 CHECKOUT_FIRSTNAME=Jan
 CHECKOUT_LASTNAME=Jansen
 CHECKOUT_PHONE=0612345678
 CHECKOUT_POSTCODE=1234AB
 CHECKOUT_CITY=Amsterdam
+
+# Add your other clients here
+# CLIENT2_USERNAME=...
+# CLIENT2_PASSWORD=...
 ```
 
-### Parallelization
+### Default Test Configuration
 
-By default, tests run serially (1 worker). To run tests in parallel:
+**Tests run with the following defaults:**
+- **Headless mode** (no browser UI)
+- **6 parallel workers** for faster execution
 
-- Use `npm run test:parallel` (6 workers)
-- Or modify `playwright.config.ts`:
-  ```typescript
-  workers: 6,  // Change from 1 to 6
-  fullyParallel: true,  // Change from false to true
-  ```
+To run with browser visible:
+- Use `npm run test:headed` (all clients)
+- Use `npm run test:action:headed` (Action client only)
+
+To run tests serially (one at a time) for debugging:
+- Use `npm run test:serial` (all clients)
+- Use `npm run test:action:serial` (Action client only)
+
+Or modify `playwright.config.ts`:
+```typescript
+workers: 1,  // Change from 6 to 1
+fullyParallel: false,  // Change from true to false
+```
 
 ### Test Results
 
@@ -211,9 +267,9 @@ By default, tests run serially (1 worker). To run tests in parallel:
 
 ## Customizing Tests
 
-### Adding New Address Test Cases
+### Adding New Address Test Cases (Action Client)
 
-Edit `test-data/address-test-cases.ts` to add new test cases:
+Edit `clients/action/test-data/address-test-cases.ts` to add new test cases:
 
 ```typescript
 { 
@@ -228,11 +284,11 @@ Edit `test-data/address-test-cases.ts` to add new test cases:
 }
 ```
 
-The test will be automatically generated in `address-validation.spec.ts`.
+The test will be automatically generated in `clients/action/tests/address-validation.spec.ts`.
 
 ### Creating Custom Tests
 
-Create a new test file in `tests/`:
+Create a new test file in your client's `tests/` directory (e.g., `clients/action/tests/`):
 
 ```typescript
 import { test, expect } from '@playwright/test';
@@ -250,13 +306,16 @@ test('my custom test', async ({ page }) => {
 
 ### Authentication Fails
 
-1. Check that the selectors in `auth.setup.ts` match your SSO login page
+1. Check that the selectors in your client's `setup/auth.setup.ts` match the login page
 2. Use `npm run test:debug` to step through the authentication process
 3. Check console output for the current URL to verify you're on the right page
 
 ### Session Expires
 
-Delete the `.auth/user.json` file and run `npm run auth:setup` again to re-authenticate.
+Delete the client's auth file (e.g., `clients/action/.auth/user.json`) and run the auth setup again:
+```bash
+npm run auth:setup:action
+```
 
 ### Can't Find Elements
 
@@ -300,23 +359,29 @@ All tests save screenshots to help with debugging:
 # Setup
 npm install
 npx playwright install chromium
-npm run auth:setup
+npm run auth:setup:action
+
+# Run all Action tests (headless, parallel)
+npm run test:action
+
+# Run with browser visible
+npm run test:action:headed
 
 # Run single test (IMPORTANT: use -- before -g when using npm)
-npm test tests/address-validation.spec.ts -- -g "BT-001 - Empty addition should be allowed"
+npm run test:action clients/action/tests/address-validation.spec.ts -- -g "BT-001"
 
 # Or use npx directly (no -- needed)
-npx playwright test --headed tests/address-validation.spec.ts -g "BT-001 - Empty addition should be allowed"
+npx playwright test --project=action-chromium clients/action/tests/address-validation.spec.ts -g "BT-001"
 
 # Run category of tests
-npm test tests/address-validation.spec.ts -- -g "^BT-"
-npm test tests/address-validation.spec.ts -- -g "^NL-"
+npm run test:action clients/action/tests/address-validation.spec.ts -- -g "^BT-"
+npm run test:action clients/action/tests/address-validation.spec.ts -- -g "^NL-"
 
-# Run all tests serially
-npm test tests/address-validation.spec.ts
+# Run all address validation tests (headless, parallel by default)
+npm run test:action clients/action/tests/address-validation.spec.ts
 
-# Run all tests in parallel (faster)
-npm run test:parallel tests/address-validation.spec.ts
+# Run serially for debugging
+npm run test:action:serial clients/action/tests/address-validation.spec.ts
 
 # View results
 npx playwright show-report
@@ -324,10 +389,13 @@ npx playwright show-report
 
 ## Tips
 
-- The authentication state is reused across all tests, so you only need to login once
-- Screenshots are automatically saved to `screenshots/address-tests/` for each test
+- Each client has isolated authentication state that is reused across tests
+- Screenshots are automatically saved to `screenshots/` directory
 - Use `page.pause()` in any test to debug interactively
-- The `.auth/` directory is gitignored to keep credentials safe
-- Always use `--` before `-g` when running tests through npm scripts
-- Tests run serially (1 at a time) by default for easier debugging
-- Use `test:parallel` for faster execution when running many tests
+- All `.auth/` directories are gitignored to keep credentials safe
+- Always use `--` before additional flags when running tests through npm scripts
+- **Tests run headless with 6 parallel workers by default** for maximum speed
+- Use headed mode (`test:action:headed`) to see browser during execution
+- Use serial mode (`test:action:serial`) when debugging specific issues
+- The `clients/_template/` directory provides a starting point for adding new clients
+- Each client can have its own base URL, authentication flow, and test data

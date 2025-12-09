@@ -4,36 +4,63 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export default defineConfig({
-  testDir: './tests',
-  fullyParallel: false, // Set to false to run tests serially by default
+  testDir: './clients',
+  fullyParallel: true, // Run tests in parallel by default
   forbidOnly: !!process.env.CI,
   retries: 1, // Retry failed tests once
-  workers: 1, // Run one test at a time by default (change to 6 for parallel)
+  workers: 6, // Run tests with 6 workers in parallel by default
   reporter: [
     ['list'], // Shows test progress one by one in terminal
     ['html', { open: 'never' }], // Generate HTML report but don't auto-open
     ['json', { outputFile: 'test-results.json' }], // JSON results for analysis
   ],
   use: {
-    baseURL: 'https://shop-staging.action.com',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
 
   projects: [
-    // Setup project to authenticate
+    // ============================
+    // ACTION CLIENT
+    // ============================
     {
-      name: 'setup',
-      testMatch: /.*\.setup\.ts/,
+      name: 'action-setup',
+      testMatch: /clients\/action\/setup\/.*\.setup\.ts/,
+      use: {
+        baseURL: 'https://shop-staging.action.com',
+      },
     },
     {
-      name: 'chromium',
+      name: 'action-chromium',
+      testMatch: /clients\/action\/tests\/.*\.spec\.ts/,
       use: { 
         ...devices['Desktop Chrome'],
-        // Use stored authentication state
-        storageState: '.auth/user.json',
+        baseURL: 'https://shop-staging.action.com',
+        storageState: 'clients/action/.auth/user.json',
       },
-      dependencies: ['setup'],
+      dependencies: ['action-setup'],
     },
+
+    // ============================
+    // ADD OTHER CLIENTS HERE
+    // ============================
+    // Example for future client:
+    // {
+    //   name: 'client2-setup',
+    //   testMatch: /clients\/client2\/setup\/.*\.setup\.ts/,
+    //   use: {
+    //     baseURL: 'https://example-client2.com',
+    //   },
+    // },
+    // {
+    //   name: 'client2-chromium',
+    //   testMatch: /clients\/client2\/tests\/.*\.spec\.ts/,
+    //   use: { 
+    //     ...devices['Desktop Chrome'],
+    //     baseURL: 'https://example-client2.com',
+    //     storageState: 'clients/client2/.auth/user.json',
+    //   },
+    //   dependencies: ['client2-setup'],
+    // },
   ],
 });

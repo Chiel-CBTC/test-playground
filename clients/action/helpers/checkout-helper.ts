@@ -78,7 +78,7 @@ export async function completeCheckoutFlow(
   
   // Take screenshot before clicking iDEAL button
   const beforeClickPath = testId 
-    ? `screenshots/address-tests/${testId}-before-click.png`
+    ? `screenshots/address-tests/AEC-1472_${testId}-before-click.png`
     : 'screenshots/before-ideal-click.png';
   await page.screenshot({ path: beforeClickPath, fullPage: true });
 

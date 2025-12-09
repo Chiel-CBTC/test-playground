@@ -9,9 +9,10 @@ playwright/.cache/
 # Screenshots (generated during tests)
 screenshots/
 
-# Playwright state
+# Playwright state (including client-specific auth)
 .auth/
 playwright/.auth/
+clients/**/.auth/
 
 # Environment variables
 .env

@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "Playwright framework for testing SSO-protected pages",
   "scripts": {
-    "test": "playwright test --headed",
-    "test:parallel": "playwright test --headed --workers=6 --fully-parallel",
-    "test:parallel:headless": "playwright test --workers=6 --fully-parallel",
-    "test:headless": "playwright test",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:serial": "playwright test --workers=1",
     "test:debug": "playwright test --debug",
-    "auth:setup": "playwright test auth.setup.ts --headed"
+    "test:action": "playwright test --project=action-setup --project=action-chromium",
+    "test:action:headed": "playwright test --project=action-setup --project=action-chromium --headed",
+    "test:action:serial": "playwright test --project=action-setup --project=action-chromium --workers=1",
+    "auth:setup:action": "playwright test --project=action-setup --headed"
   },
   "keywords": [],
   "author": "",

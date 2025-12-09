@@ -13,10 +13,6 @@ test.describe('Main Page Tests', () => {
     
     // Take a screenshot for verification
     await page.screenshot({ path: 'screenshots/main-page.png', fullPage: true });
-    
-    console.log('Successfully accessed the main page!');
-    console.log('Current URL:', page.url());
-    console.log('Page title:', await page.title());
   });
 
   test('should be able to interact with the page', async ({ page }) => {
@@ -31,7 +27,5 @@ test.describe('Main Page Tests', () => {
     // Verify page elements are visible
     // await expect(page.locator('header')).toBeVisible();
     // await expect(page.locator('footer')).toBeVisible();
-    
-    console.log('Page interaction test completed');
   });
 });

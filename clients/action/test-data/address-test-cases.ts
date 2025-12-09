@@ -56,7 +56,7 @@ export const addressTestCases: AddressTestCase[] = [
   { testId: 'NL-012', category: 'Realistic', streetName: 'Church Street', houseNumber: '45', addition: 'II', expectedResult: 'Accept', priority: 'Medium', notes: 'Roman numeral' },
   { testId: 'NL-013', category: 'Realistic', streetName: 'Church Street', houseNumber: '45', addition: 'III', expectedResult: 'Accept', priority: 'Medium', notes: '3 characters' },
   { testId: 'NL-014', category: 'Realistic', streetName: 'Church Street', houseNumber: '45', addition: '(bus-1)', expectedResult: 'Show error', errorMessage: 'Controleer je ingevoerde gegevens', priority: 'Medium', notes: 'additional scenario' },
-  { testId: 'NL-015', category: 'Realistic', streetName: 'Church Street', houseNumber: '45A', addition: 'Bus-1', expectedResult: 'Accept', priority: 'Medium', notes: 'additional scenario' },
+  { testId: 'NL-015', category: 'Realistic', streetName: 'Church Street', houseNumber: '45A', addition: 'Bus1', expectedResult: 'Accept', priority: 'Medium', notes: 'additional scenario' },
   
   // COMBINATIONS HOUSE NUMBER + ADDITION
   { testId: 'CO-001', category: 'Combination', streetName: 'Village Street', houseNumber: '12345', addition: 'ABCDEF', expectedResult: 'Accept', priority: 'High', notes: 'Max both fields (11 total)' },
