@@ -20,12 +20,6 @@ automatedTestCases.forEach((testCase) => {
     const shouldReachIdeal = testCase.expectedResult === 'Accept' || testCase.expectedResult === 'Accept (trimmed)';
     const expectedErrorMessage = testCase.errorMessage;
     
-    // Only log in case of debugging - comment out for cleaner parallel output
-    // console.log(`\n=== Running Test: AEC-1472 ${testCase.testId} ===`);
-    // console.log(`Category: ${testCase.category}`);
-    // console.log(`Address Field: "${addressField}"`);
-    // console.log(`Expected Result: ${testCase.expectedResult}`);
-    
     await completeCheckoutFlow(page, addressField, shouldReachIdeal, expectedErrorMessage, testCase.testId);
     
     // Take screenshot with test ID in filename
