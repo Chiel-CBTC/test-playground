@@ -13,6 +13,9 @@ export default defineConfig({
     ['list'], // Shows test progress one by one in terminal
     ['html', { open: 'never' }], // Generate HTML report but don't auto-open
     ['json', { outputFile: 'test-results.json' }], // JSON results for analysis
+    ['@testomatio/reporter/playwright', {
+      apiKey: process.env.TESTOMATIO,
+    }],
   ],
   use: {
     trace: 'on-first-retry',
@@ -27,7 +30,7 @@ export default defineConfig({
       name: 'action-setup',
       testMatch: /clients\/action\/setup\/.*\.setup\.ts/,
       use: {
-        baseURL: 'https://shop-staging.action.com',
+        baseURL: process.env.ACTION_BASE_URL || 'https://shop-staging.action.com',
       },
     },
     {
@@ -35,7 +38,7 @@ export default defineConfig({
       testMatch: /clients\/action\/tests\/.*\.spec\.ts/,
       use: { 
         ...devices['Desktop Chrome'],
-        baseURL: 'https://shop-staging.action.com',
+        baseURL: process.env.ACTION_BASE_URL || 'https://shop-staging.action.com',
         storageState: 'clients/action/.auth/user.json',
       },
       dependencies: ['action-setup'],

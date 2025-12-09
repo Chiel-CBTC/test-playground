@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Checkout Flow', () => {
-  test('should complete checkout flow with iDeal payment', async ({ page }) => {
+test.describe('Checkout Flow @Sc3fee8e8', () => {
+  test('should complete checkout flow with iDeal payment @T44c73ae5', async ({ page }) => {
     // Navigate to the main page
     await page.goto('/nl-nl');
     await page.waitForLoadState('networkidle');
@@ -67,12 +67,21 @@ test.describe('Checkout Flow', () => {
     await page.getByRole('button', { name: 'Betalen met iDEAL' }).click();
     
     // Step 6: Verify redirect to iDeal payment page
-    await page.waitForURL(/.*ext\.pay\.ideal\.nl.*/i, { timeout: 30000 });
+    // Determine the expected iDEAL URL pattern based on environment
+    const baseURL = process.env.ACTION_BASE_URL || '';
+    const isStaging = baseURL.includes('staging');
     
-    const currentUrl = page.url();
-    
-    // Verify we're on the iDeal payment page
-    expect(currentUrl).toContain('ext.pay.ideal.nl');
+    if (isStaging) {
+      // Staging uses ext.pay.ideal.nl
+      await page.waitForURL(/.*ext\.pay\.ideal\.nl.*/i, { timeout: 30000 });
+      const currentUrl = page.url();
+      expect(currentUrl).toContain('ext.pay.ideal.nl');
+    } else {
+      // Production uses pay.ideal.nl
+      await page.waitForURL(/.*pay\.ideal\.nl.*/i, { timeout: 30000 });
+      const currentUrl = page.url();
+      expect(currentUrl).toContain('pay.ideal.nl');
+    }
     
     // Take a screenshot of the payment page
     await page.screenshot({ path: 'screenshots/ideal-payment-page.png', fullPage: true });

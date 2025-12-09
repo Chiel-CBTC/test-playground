@@ -88,14 +88,32 @@ export async function completeCheckoutFlow(
   
   // Step 6: Verify result based on expected behavior
   if (shouldReachIdeal) {
-    // Should reach iDeal page
-    await page.waitForURL(/.*ext\.pay\.ideal\.nl.*/i, { timeout: 10000 });
-    const currentUrl = page.url();
-    expect(currentUrl).toContain('ext.pay.ideal.nl');
+    // Determine the expected iDEAL URL pattern based on environment
+    const baseURL = process.env.ACTION_BASE_URL || '';
+    const isStaging = baseURL.includes('staging');
+    
+    if (isStaging) {
+      // Staging uses ext.pay.ideal.nl
+      await page.waitForURL(/.*ext\.pay\.ideal\.nl.*/i, { timeout: 10000 });
+      const currentUrl = page.url();
+      expect(currentUrl).toContain('ext.pay.ideal.nl');
+    } else {
+      // Production uses pay.ideal.nl
+      await page.waitForURL(/.*pay\.ideal\.nl.*/i, { timeout: 10000 });
+      const currentUrl = page.url();
+      expect(currentUrl).toContain('pay.ideal.nl');
+    }
   } else {
     // Should NOT reach iDeal page (error expected)
     const currentUrl = page.url();
-    expect(currentUrl).not.toContain('ext.pay.ideal.nl');
+    const baseURL = process.env.ACTION_BASE_URL || '';
+    const isStaging = baseURL.includes('staging');
+    
+    if (isStaging) {
+      expect(currentUrl).not.toContain('ext.pay.ideal.nl');
+    } else {
+      expect(currentUrl).not.toContain('pay.ideal.nl');
+    }
     expect(currentUrl).toContain('checkout');
     
     // Check for error message if provided

@@ -4,36 +4,49 @@ import { fileURLToPath } from 'url';
 
 const authFile = 'clients/action/.auth/user.json';
 
-setup('authenticate', async ({ page }) => {
-  console.log('Starting authentication flow...');
+setup('authenticate', async ({ page, baseURL }) => {
+  const isStaging = baseURL?.includes('staging');
   
-  // Navigate to the main page - this will redirect to Cloudflare Access
+  console.log('Starting authentication flow...');
+  console.log('Base URL:', baseURL);
+  console.log('Is staging:', isStaging);
+  
+  // Navigate to the main page
   await page.goto('/nl-nl');
   
-  console.log('Current URL after redirect:', page.url());
+  console.log('Current URL after navigation:', page.url());
   
-  // Click on Azure AD login option
-  console.log('Clicking Azure AD login...');
-  await page.getByRole('link', { name: 'Azure AD ・ Action' }).click();
-  
-  // Fill in email/username
-  console.log('Entering username...');
-  await page.getByRole('textbox', { name: 'Enter your email, phone, or' }).click();
-  await page.getByRole('textbox', { name: 'Enter your email, phone, or' }).fill(process.env.SSO_USERNAME || '');
-  await page.getByRole('button', { name: 'Next' }).click();
-  
-  // Fill in password
-  console.log('Entering password...');
-  await page.getByRole('textbox', { name: /Enter the password for/ }).click();
-  await page.getByRole('textbox', { name: /Enter the password for/ }).fill(process.env.SSO_PASSWORD || '');
-  await page.getByRole('button', { name: 'Sign in' }).click();
-  
-  // Click "Yes" to stay signed in
-  console.log('Clicking Yes to stay signed in...');
-  await page.getByRole('button', { name: 'Yes' }).click();
-  
-  // Wait for successful login - should redirect back to /nl-nl
-  await page.waitForURL('**/nl-nl**', { timeout: 30000 });
+  // Only perform SSO login if on staging
+  if (isStaging) {
+    console.log('Staging environment detected - performing SSO login...');
+    
+    // Click on Azure AD login option
+    console.log('Clicking Azure AD login...');
+    await page.getByRole('link', { name: 'Azure AD ・ Action' }).click();
+    
+    // Fill in email/username
+    console.log('Entering username...');
+    await page.getByRole('textbox', { name: 'Enter your email, phone, or' }).click();
+    await page.getByRole('textbox', { name: 'Enter your email, phone, or' }).fill(process.env.SSO_USERNAME || '');
+    await page.getByRole('button', { name: 'Next' }).click();
+    
+    // Fill in password
+    console.log('Entering password...');
+    await page.getByRole('textbox', { name: /Enter the password for/ }).click();
+    await page.getByRole('textbox', { name: /Enter the password for/ }).fill(process.env.SSO_PASSWORD || '');
+    await page.getByRole('button', { name: 'Sign in' }).click();
+    
+    // Click "Yes" to stay signed in
+    console.log('Clicking Yes to stay signed in...');
+    await page.getByRole('button', { name: 'Yes' }).click();
+    
+    // Wait for successful login - should redirect back to /nl-nl
+    await page.waitForURL('**/nl-nl**', { timeout: 30000 });
+  } else {
+    console.log('Production environment detected - skipping SSO login...');
+    // Wait for page to load
+    await page.waitForLoadState('networkidle');
+  }
   
   // Accept cookies/terms (if present)
   console.log('Checking for cookie banner...');
