@@ -24,22 +24,22 @@ export default defineConfig({
 
   projects: [
     // ============================
-    // ACTION CLIENT
+    // ACTION ECOM CLIENT
     // ============================
     {
       name: 'action-setup',
-      testMatch: /projects\/action\/setup\/.*\.setup\.ts/,
+      testMatch: /projects\/action-ecom\/setup\/.*\.setup\.ts/,
       use: {
         baseURL: process.env.ACTION_BASE_URL || 'https://shop-staging.action.com',
       },
     },
     {
       name: 'action-chromium',
-      testMatch: /projects\/action\/tests\/.*\.spec\.ts/,
+      testMatch: /projects\/action-ecom\/tests\/.*\.spec\.ts/,
       use: { 
         ...devices['Desktop Chrome'],
         baseURL: process.env.ACTION_BASE_URL || 'https://shop-staging.action.com',
-        storageState: 'projects/action/.auth/user.json',
+        storageState: 'projects/action-ecom/.auth/user.json',
       },
       dependencies: ['action-setup'],
     },
