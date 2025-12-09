@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Example Tests', () => {
-  test('should load the main page', async ({ page }) => {
+test.describe('Example Tests @Sbe93df2d', () => {
+  test('should load the main page @Tf2520538', async ({ page }) => {
     // TODO: Replace with your actual test
     await page.goto('/');
     
@@ -11,7 +11,7 @@ test.describe('Example Tests', () => {
     console.log('Test completed successfully');
   });
   
-  test('should interact with page elements', async ({ page }) => {
+  test('should interact with page elements @T2c371fcc', async ({ page }) => {
     // TODO: Add your test logic here
     await page.goto('/');
     
