@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Test results and reports
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Screenshots (generated during tests)
+screenshots/
+
+# Playwright state
+.auth/
+playwright/.auth/
+
+# Environment variables
+.env
+.env.local
+.env*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional: Test artifacts
+*.har
+*.zip
+trace.zip

@@ -1,0 +1,1124 @@
+{
+  "config": {
+    "configFile": "/home/chiel/Temp/test/playwright.config.ts",
+    "rootDir": "/home/chiel/Temp/test/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 6
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/home/chiel/Temp/test/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 6
+        },
+        "id": "setup",
+        "name": "setup",
+        "testDir": "/home/chiel/Temp/test/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.setup\\.ts/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/chiel/Temp/test/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 6
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/chiel/Temp/test/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 6,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "auth.setup.ts",
+      "file": "auth.setup.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "authenticate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4732,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Starting authentication flow...\n"
+                    },
+                    {
+                      "text": "Current URL after redirect: https://actiondigital.cloudflareaccess.com/cdn-cgi/access/login/shop-staging.action.com?kid=2fcc9198bb4c425c0c7fbc9417bfeab8ea0619ed3abe8cdc1cfa3f2ef9fb2d27&redirect_url=%2Fnl-nl&meta=eyJraWQiOiJlMTdhMmU1NWVhODkwM2I4MTZjMDFkZGJiYWU0NjA2YzkwOTQwMTkwNWU5MmIzNDNjZjE5NWJlZGYyNTVkMjI5IiwiYWxnIjoiUlMyNTYiLCJ0eXAiOiJKV1QifQ.eyJzZXJ2aWNlX3Rva2VuX3N0YXR1cyI6ZmFsc2UsImlhdCI6MTc2NTI4NTYyNSwic2VydmljZV90b2tlbl9pZCI6IiIsImF1ZCI6IjJmY2M5MTk4YmI0YzQyNWMwYzdmYmM5NDE3YmZlYWI4ZWEwNjE5ZWQzYWJlOGNkYzFjZmEzZjJlZjlmYjJkMjciLCJob3N0bmFtZSI6InNob3Atc3RhZ2luZy5hY3Rpb24uY29tIiwiYXBwX3Nlc3Npb25faGFzaCI6IjM2MmM2MDlmMDM5YWMwZjdjMDQ4NjE5ODA3ZWYyZmZiNzg3YTViNmNjMTI3ZmYzMmJlMzVkZjdmYjJhNTgyM2UiLCJuYmYiOjE3NjUyODU2MjUsImlzX3dhcnAiOmZhbHNlLCJpc19nYXRld2F5IjpmYWxzZSwidHlwZSI6Im1ldGEiLCJyZWRpcmVjdF91cmwiOiJcL25sLW5sIiwibXRsc19hdXRoIjp7ImNlcnRfaXNzdWVyX3NraSI6IiIsImNlcnRfcHJlc2VudGVkIjpmYWxzZSwiY2VydF9zZXJpYWwiOiIiLCJjZXJ0X2lzc3Vlcl9kbiI6IiIsImF1dGhfc3RhdHVzIjoiTk9ORSJ9LCJhdXRoX3N0YXR1cyI6Ik5PTkUifQ.MUSM2iP0fdNUKE-b2r24dOb62V42z_wEEzF7xhOFGUTg65XumOIVOytvKko3oH7G2Ic70pFkGDvfTdnjW2nhE6qf8sAw-yaQY8_sZ_LnTQbBjUhlveuN0b8NWeNjR_VjZ3I0mjJOosZ4pRtr3nZ3-osKYhfw9abOBAZ010pAfaVRzFGApzZgyc4miGWACYYQxOUIlVw4FEGlXL2lYCrbievR6_sQRY6dZgCqt8qcA7uXtNpMYQHDKZJI6-0gXnlFGXG2fJDpeDBTvpU4oDhRQUd6y4YmBiSdKWN6IEMzh6ZEBJInrM271dpiS962CxSLhxD2XCntfjHV2fxCj6_qGw\n"
+                    },
+                    {
+                      "text": "Clicking Azure AD login...\n"
+                    },
+                    {
+                      "text": "Entering username...\n"
+                    },
+                    {
+                      "text": "Entering password...\n"
+                    },
+                    {
+                      "text": "Clicking Yes to stay signed in...\n"
+                    },
+                    {
+                      "text": "Checking for cookie banner...\n"
+                    },
+                    {
+                      "text": "No cookie banner present\n"
+                    },
+                    {
+                      "text": "Authentication successful!\n"
+                    },
+                    {
+                      "text": "Final URL: https://shop-staging.action.com/nl-nl\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:04.855Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-60f085b113a677673906",
+          "file": "auth.setup.ts",
+          "line": 7,
+          "column": 6
+        }
+      ]
+    },
+    {
+      "title": "address-validation.spec.ts",
+      "file": "address-validation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "NL-001 - Most common addition",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 21499,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:10.240Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-779dc294f869afe3192c",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "NL-002 - 3 characters",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 21134,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:10.192Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-757e81dfd515b4d0edd1",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "NL-003 - 4 characters (occurs in old neighborhoods)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 20285,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:10.410Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-df359a14ae2358f90e30",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "NL-004 - 5 characters (occurs in old neighborhoods)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 20662,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:10.394Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-2094307441c31b43b667",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "NL-005 - 5 characters - common",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 4,
+                  "status": "passed",
+                  "duration": 20585,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:10.262Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-be5fe8e8b89cb30e2f7d",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "NL-006 - 7 characters - common, known bug",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 5,
+                  "status": "failed",
+                  "duration": 23125,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\n    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5",
+                    "location": {
+                      "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                      "column": 34,
+                      "line": 104
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                        "column": 34,
+                        "line": 104
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m\n\u001b[2m    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\u001b[22m\n\u001b[2m    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:10.229Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-006---7-characters---common-known-bug-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-006---7-characters---common-known-bug-chromium/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                    "column": 34,
+                    "line": 104
+                  }
+                },
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 5,
+                  "status": "failed",
+                  "duration": 22828,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\n    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5",
+                    "location": {
+                      "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                      "column": 34,
+                      "line": 104
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                        "column": 34,
+                        "line": 104
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m\n\u001b[2m    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\u001b[22m\n\u001b[2m    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-12-09T13:07:35.561Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-006---7-characters---common-known-bug-chromium-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-006---7-characters---common-known-bug-chromium-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-006---7-characters---common-known-bug-chromium-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                    "column": 34,
+                    "line": 104
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-c8b5e822b89c8befd009",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "NL-007 - 8 characters - common",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 20316,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\n    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5",
+                    "location": {
+                      "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                      "column": 34,
+                      "line": 104
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                        "column": 34,
+                        "line": 104
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m\n\u001b[2m    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\u001b[22m\n\u001b[2m    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:30.820Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-007---8-characters---common-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-007---8-characters---common-chromium/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                    "column": 34,
+                    "line": 104
+                  }
+                },
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 22495,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\n    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5",
+                    "location": {
+                      "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                      "column": 34,
+                      "line": 104
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                        "column": 34,
+                        "line": 104
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m\n\u001b[2m    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\u001b[22m\n\u001b[2m    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-12-09T13:07:52.076Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-007---8-characters---common-chromium-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-007---8-characters---common-chromium-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-007---8-characters---common-chromium-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                    "column": 34,
+                    "line": 104
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-be9a0b1d09218335d30d",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "NL-008 - 10 characters - common",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 4,
+                  "status": "failed",
+                  "duration": 20471,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\n    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5",
+                    "location": {
+                      "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                      "column": 34,
+                      "line": 104
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                        "column": 34,
+                        "line": 104
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m\n\u001b[2m    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\u001b[22m\n\u001b[2m    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:30.993Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-008---10-characters---common-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-008---10-characters---common-chromium/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                    "column": 34,
+                    "line": 104
+                  }
+                },
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 4,
+                  "status": "failed",
+                  "duration": 22631,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\n    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5",
+                    "location": {
+                      "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                      "column": 34,
+                      "line": 104
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                        "column": 34,
+                        "line": 104
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m\n\u001b[2m    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\u001b[22m\n\u001b[2m    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-12-09T13:07:52.729Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-008---10-characters---common-chromium-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-008---10-characters---common-chromium-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-008---10-characters---common-chromium-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                    "column": 34,
+                    "line": 104
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-4d8346c1a8c19016eecb",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "NL-009 - 5 characters",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 14934,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:31.213Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-79095b85843f8194f20d",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "NL-010 - 5 characters",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 15587,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:31.483Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-65bf498ba3109e32366a",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "NL-011 - Roman numeral",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15080,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:31.881Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-85a69f9677f1856457e4",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "NL-012 - Roman numeral",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 13727,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:46.164Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-f9ec6564193edda12745",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "NL-013 - 3 characters",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14456,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:46.986Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-fee5bbfa137db97ce736",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "NL-014 - additional scenario",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 18342,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\n    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5",
+                    "location": {
+                      "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                      "column": 34,
+                      "line": 104
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                        "column": 34,
+                        "line": 104
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m\n\u001b[2m    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\u001b[22m\n\u001b[2m    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:07:47.123Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-014---additional-scenario-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-014---additional-scenario-chromium/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                    "column": 34,
+                    "line": 104
+                  }
+                },
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 19139,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\n    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5",
+                    "location": {
+                      "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                      "column": 34,
+                      "line": 104
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                        "column": 34,
+                        "line": 104
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Controleer je ingevoerde gegevens')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Controleer je ingevoerde gegevens')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>Controleer je ingevoerde gegevens</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mif\u001b[39m (expectedErrorMessage) {\n \u001b[90m 103 |\u001b[39m       \u001b[36mconst\u001b[39m errorElement \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(expectedErrorMessage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorElement)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     }\n \u001b[90m 106 |\u001b[39m   }\n \u001b[90m 107 |\u001b[39m }\u001b[0m\n\u001b[2m    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:104:34)\u001b[22m\n\u001b[2m    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-12-09T13:08:06.816Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-014---additional-scenario-chromium-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-014---additional-scenario-chromium-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-014---additional-scenario-chromium-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                    "column": 34,
+                    "line": 104
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-8488d334db5e9e9ce43a",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "NL-015 - additional scenario",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 5,
+                  "status": "failed",
+                  "duration": 23865,
+                  "error": {
+                    "message": "TimeoutError: page.waitForURL: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================",
+                    "stack": "TimeoutError: page.waitForURL: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================\n    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:92:16)\n    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5",
+                    "location": {
+                      "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                      "column": 16,
+                      "line": 92
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:92\n\n\u001b[0m \u001b[90m 90 |\u001b[39m   \u001b[36mif\u001b[39m (shouldReachIdeal) {\n \u001b[90m 91 |\u001b[39m     \u001b[90m// Should reach iDeal page\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 92 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[35m/.*ext\\.pay\\.ideal\\.nl.*/i\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 93 |\u001b[39m     \u001b[36mconst\u001b[39m currentUrl \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39murl()\u001b[33m;\u001b[39m\n \u001b[90m 94 |\u001b[39m     expect(currentUrl)\u001b[33m.\u001b[39mtoContain(\u001b[32m'ext.pay.ideal.nl'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 95 |\u001b[39m   } \u001b[36melse\u001b[39m {\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                        "column": 16,
+                        "line": 92
+                      },
+                      "message": "TimeoutError: page.waitForURL: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================\n\n\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:92\n\n\u001b[0m \u001b[90m 90 |\u001b[39m   \u001b[36mif\u001b[39m (shouldReachIdeal) {\n \u001b[90m 91 |\u001b[39m     \u001b[90m// Should reach iDeal page\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 92 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[35m/.*ext\\.pay\\.ideal\\.nl.*/i\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 93 |\u001b[39m     \u001b[36mconst\u001b[39m currentUrl \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39murl()\u001b[33m;\u001b[39m\n \u001b[90m 94 |\u001b[39m     expect(currentUrl)\u001b[33m.\u001b[39mtoContain(\u001b[32m'ext.pay.ideal.nl'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 95 |\u001b[39m   } \u001b[36melse\u001b[39m {\u001b[0m\n\u001b[2m    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:92:16)\u001b[22m\n\u001b[2m    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T13:08:01.095Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-015---additional-scenario-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-015---additional-scenario-chromium/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                    "column": 16,
+                    "line": 92
+                  }
+                },
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 22170,
+                  "error": {
+                    "message": "TimeoutError: page.waitForURL: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================",
+                    "stack": "TimeoutError: page.waitForURL: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================\n    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:92:16)\n    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5",
+                    "location": {
+                      "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                      "column": 16,
+                      "line": 92
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:92\n\n\u001b[0m \u001b[90m 90 |\u001b[39m   \u001b[36mif\u001b[39m (shouldReachIdeal) {\n \u001b[90m 91 |\u001b[39m     \u001b[90m// Should reach iDeal page\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 92 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[35m/.*ext\\.pay\\.ideal\\.nl.*/i\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 93 |\u001b[39m     \u001b[36mconst\u001b[39m currentUrl \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39murl()\u001b[33m;\u001b[39m\n \u001b[90m 94 |\u001b[39m     expect(currentUrl)\u001b[33m.\u001b[39mtoContain(\u001b[32m'ext.pay.ideal.nl'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 95 |\u001b[39m   } \u001b[36melse\u001b[39m {\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                        "column": 16,
+                        "line": 92
+                      },
+                      "message": "TimeoutError: page.waitForURL: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================\n\n\u001b[90m   at \u001b[39mhelpers/checkout-helper.ts:92\n\n\u001b[0m \u001b[90m 90 |\u001b[39m   \u001b[36mif\u001b[39m (shouldReachIdeal) {\n \u001b[90m 91 |\u001b[39m     \u001b[90m// Should reach iDeal page\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 92 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[35m/.*ext\\.pay\\.ideal\\.nl.*/i\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 93 |\u001b[39m     \u001b[36mconst\u001b[39m currentUrl \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39murl()\u001b[33m;\u001b[39m\n \u001b[90m 94 |\u001b[39m     expect(currentUrl)\u001b[33m.\u001b[39mtoContain(\u001b[32m'ext.pay.ideal.nl'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 95 |\u001b[39m   } \u001b[36melse\u001b[39m {\u001b[0m\n\u001b[2m    at completeCheckoutFlow (/home/chiel/Temp/test/tests/helpers/checkout-helper.ts:92:16)\u001b[22m\n\u001b[2m    at /home/chiel/Temp/test/tests/address-validation.spec.ts:29:5\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-12-09T13:08:25.631Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-015---additional-scenario-chromium-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-015---additional-scenario-chromium-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/chiel/Temp/test/test-results/address-validation-NL-015---additional-scenario-chromium-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/chiel/Temp/test/tests/helpers/checkout-helper.ts",
+                    "column": 16,
+                    "line": 92
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "69baf4f010cf03d15897-7b882379ad1775d252e0",
+          "file": "address-validation.spec.ts",
+          "line": 12,
+          "column": 7
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-12-09T13:07:04.462Z",
+    "duration": 103767.186,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}
