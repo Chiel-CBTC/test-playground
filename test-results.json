@@ -108,7 +108,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5821,
+                  "duration": 5676,
                   "errors": [],
                   "stdout": [
                     {
@@ -121,7 +121,7 @@
                       "text": "Is staging: \u001b[33mtrue\u001b[39m\n"
                     },
                     {
-                      "text": "Current URL after navigation: https://actiondigital.cloudflareaccess.com/cdn-cgi/access/login/shop-staging.action.com?kid=2fcc9198bb4c425c0c7fbc9417bfeab8ea0619ed3abe8cdc1cfa3f2ef9fb2d27&redirect_url=%2Fnl-nl&meta=eyJraWQiOiJlMTdhMmU1NWVhODkwM2I4MTZjMDFkZGJiYWU0NjA2YzkwOTQwMTkwNWU5MmIzNDNjZjE5NWJlZGYyNTVkMjI5IiwiYWxnIjoiUlMyNTYiLCJ0eXAiOiJKV1QifQ.eyJzZXJ2aWNlX3Rva2VuX3N0YXR1cyI6ZmFsc2UsImlhdCI6MTc2NTI5NzYxOCwic2VydmljZV90b2tlbl9pZCI6IiIsImF1ZCI6IjJmY2M5MTk4YmI0YzQyNWMwYzdmYmM5NDE3YmZlYWI4ZWEwNjE5ZWQzYWJlOGNkYzFjZmEzZjJlZjlmYjJkMjciLCJob3N0bmFtZSI6InNob3Atc3RhZ2luZy5hY3Rpb24uY29tIiwiYXBwX3Nlc3Npb25faGFzaCI6ImJlZDZiZTAzNDFmMWQ1NGJjNzk3MmFhYzViZDRlM2ZlY2E0Y2ZlZTJmYjZkMzk0ODNlYzk5MDliYzQ5ZGUyOTgiLCJuYmYiOjE3NjUyOTc2MTgsImlzX3dhcnAiOmZhbHNlLCJpc19nYXRld2F5IjpmYWxzZSwidHlwZSI6Im1ldGEiLCJyZWRpcmVjdF91cmwiOiJcL25sLW5sIiwibXRsc19hdXRoIjp7ImNlcnRfaXNzdWVyX3NraSI6IiIsImNlcnRfcHJlc2VudGVkIjpmYWxzZSwiY2VydF9zZXJpYWwiOiIiLCJjZXJ0X2lzc3Vlcl9kbiI6IiIsImF1dGhfc3RhdHVzIjoiTk9ORSJ9LCJhdXRoX3N0YXR1cyI6Ik5PTkUifQ.U4m94j-hEVkb5yt5LT-Nz6CD4S8iHnA8H0j6DdTnEnAiTW8XjJV9m1xSrH-SssJGfwQBkIserRVg9W7NopeKDYsQw087IrEatX44idpq9DkYvuSKM2Scr9HI2gl8So39QTj_-ZyO-STG5ZZY1ucYFVLM2WBgcl-gCCsMn3c1X0NOMbiHtvq-ZU8rT7VHZOtNJCg0gHaei_Fs-LdnpFP-jXEMAHIPxJ4bp4_IOcNvOkiyjGTjqI4FP2L1cFCAo7OY5zPwungbhQHrDXV2QiWUigGV0jJOrl5l6TtTc4Wwif5YmHQBsnVcJz4gmuF9A7_KsFaECTJXcxgA-gQ6GW_TmA\n"
+                      "text": "Current URL after navigation: https://actiondigital.cloudflareaccess.com/cdn-cgi/access/login/shop-staging.action.com?kid=2fcc9198bb4c425c0c7fbc9417bfeab8ea0619ed3abe8cdc1cfa3f2ef9fb2d27&redirect_url=%2Fnl-nl&meta=eyJraWQiOiJlMTdhMmU1NWVhODkwM2I4MTZjMDFkZGJiYWU0NjA2YzkwOTQwMTkwNWU5MmIzNDNjZjE5NWJlZGYyNTVkMjI5IiwiYWxnIjoiUlMyNTYiLCJ0eXAiOiJKV1QifQ.eyJzZXJ2aWNlX3Rva2VuX3N0YXR1cyI6ZmFsc2UsImlhdCI6MTc2NTI5ODAzNCwic2VydmljZV90b2tlbl9pZCI6IiIsImF1ZCI6IjJmY2M5MTk4YmI0YzQyNWMwYzdmYmM5NDE3YmZlYWI4ZWEwNjE5ZWQzYWJlOGNkYzFjZmEzZjJlZjlmYjJkMjciLCJob3N0bmFtZSI6InNob3Atc3RhZ2luZy5hY3Rpb24uY29tIiwiYXBwX3Nlc3Npb25faGFzaCI6IjY5NTQxOWUwZmZmOTMyOTg2MzIxZDgzZWI2ZDUzOTUzM2E3ZGE5ZTlhMTY2YjMyMjFlZDhiMmZhYmNhMTE2NGYiLCJuYmYiOjE3NjUyOTgwMzQsImlzX3dhcnAiOmZhbHNlLCJpc19nYXRld2F5IjpmYWxzZSwidHlwZSI6Im1ldGEiLCJyZWRpcmVjdF91cmwiOiJcL25sLW5sIiwibXRsc19hdXRoIjp7ImNlcnRfaXNzdWVyX3NraSI6IiIsImNlcnRfcHJlc2VudGVkIjpmYWxzZSwiY2VydF9zZXJpYWwiOiIiLCJjZXJ0X2lzc3Vlcl9kbiI6IiIsImF1dGhfc3RhdHVzIjoiTk9ORSJ9LCJhdXRoX3N0YXR1cyI6Ik5PTkUifQ.tedesitn10QRu3v2gIyLzp2xefW6UjJhHXxZMUPiYcn-xK1X1HTDjgqHaamWuNn9hXzTlsD6lrY2OMU3uRqCfRi2GDWKvcLzWKQiXqP6yAMZwK0acCUcC8rYc8bl6-fFJ6HNc8563iwuDqQsYIBLZIHfokCgL3fGdoEviqAHEoSGoI9nv6Q4SAcAnee0fIf_2VOeVgPbRtfky6SkIFocMunO4_AkC9MP690GzSn0lhPneej1zZtlGMhIhjyjZ_hlXqRTE7szD7rbTTtqB7TisNlNmwfBteVDlVK1qk4HXizkjluc3ZtEoQyj-CUKg2ndSyTru8vuDTPIvzdZs-Vjrw\n"
                     },
                     {
                       "text": "Staging environment detected - performing SSO login...\n"
@@ -153,7 +153,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2025-12-09T16:26:58.805Z",
+                  "startTime": "2025-12-09T16:33:54.803Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -178,11 +178,11 @@
         {
           "title": "Address Validation - Boundary Testing (Addition Length) @S7a2d5672",
           "file": "action/tests/address-validation.spec.ts",
-          "line": 36,
+          "line": 44,
           "column": 6,
           "specs": [
             {
-              "title": "AEC-1472: BT-001 - Empty addition should be allowed @T06611464",
+              "title": "AEC-1472: BT-001 - Main Street 123 - Empty addition should be allowed @T06611464",
               "ok": true,
               "tags": [
                 "S7a2d5672",
@@ -200,12 +200,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10631,
+                      "duration": 11431,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-12-09T16:27:05.169Z",
+                      "startTime": "2025-12-09T16:34:00.999Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -213,9 +213,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "6dd4977b73409b405f1a-964b2904c40c30f23e1e",
+              "id": "6dd4977b73409b405f1a-a1cc048564e9ddd430d4",
               "file": "action/tests/address-validation.spec.ts",
-              "line": 37,
+              "line": 45,
               "column": 7
             }
           ]
@@ -225,8 +225,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-12-09T16:26:58.168Z",
-    "duration": 17767.148,
+    "startTime": "2025-12-09T16:33:54.269Z",
+    "duration": 18269.31,
     "expected": 2,
     "skipped": 0,
     "unexpected": 0,
