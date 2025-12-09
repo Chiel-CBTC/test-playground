@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export default defineConfig({
-  testDir: './clients',
+  testDir: './projects',
   fullyParallel: true, // Run tests in parallel by default
   forbidOnly: !!process.env.CI,
   retries: 1, // Retry failed tests once
@@ -28,18 +28,18 @@ export default defineConfig({
     // ============================
     {
       name: 'action-setup',
-      testMatch: /clients\/action\/setup\/.*\.setup\.ts/,
+      testMatch: /projects\/action\/setup\/.*\.setup\.ts/,
       use: {
         baseURL: process.env.ACTION_BASE_URL || 'https://shop-staging.action.com',
       },
     },
     {
       name: 'action-chromium',
-      testMatch: /clients\/action\/tests\/.*\.spec\.ts/,
+      testMatch: /projects\/action\/tests\/.*\.spec\.ts/,
       use: { 
         ...devices['Desktop Chrome'],
         baseURL: process.env.ACTION_BASE_URL || 'https://shop-staging.action.com',
-        storageState: 'clients/action/.auth/user.json',
+        storageState: 'projects/action/.auth/user.json',
       },
       dependencies: ['action-setup'],
     },
@@ -50,18 +50,18 @@ export default defineConfig({
     // Example for future client:
     // {
     //   name: 'client2-setup',
-    //   testMatch: /clients\/client2\/setup\/.*\.setup\.ts/,
+    //   testMatch: /projects\/client2\/setup\/.*\.setup\.ts/,
     //   use: {
     //     baseURL: 'https://example-client2.com',
     //   },
     // },
     // {
     //   name: 'client2-chromium',
-    //   testMatch: /clients\/client2\/tests\/.*\.spec\.ts/,
+    //   testMatch: /projects\/client2\/tests\/.*\.spec\.ts/,
     //   use: { 
     //     ...devices['Desktop Chrome'],
     //     baseURL: 'https://example-client2.com',
-    //     storageState: 'clients/client2/.auth/user.json',
+    //     storageState: 'projects/client2/.auth/user.json',
     //   },
     //   dependencies: ['client2-setup'],
     // },
