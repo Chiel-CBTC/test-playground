@@ -52,7 +52,7 @@
         "testDir": "/home/chiel/git/test-playground/projects",
         "testIgnore": [],
         "testMatch": [
-          "/projects\\/action\\/setup\\/.*\\.setup\\.ts/"
+          "/projects\\/action-ecom\\/setup\\/.*\\.setup\\.ts/"
         ],
         "timeout": 30000
       },
@@ -66,7 +66,7 @@
         "testDir": "/home/chiel/git/test-playground/projects",
         "testIgnore": [],
         "testMatch": [
-          "/projects\\/action\\/tests\\/.*\\.spec\\.ts/"
+          "/projects\\/action-ecom\\/tests\\/.*\\.spec\\.ts/"
         ],
         "timeout": 30000
       }
@@ -81,8 +81,8 @@
   },
   "suites": [
     {
-      "title": "action/setup/auth.setup.ts",
-      "file": "action/setup/auth.setup.ts",
+      "title": "action-ecom/setup/auth.setup.ts",
+      "file": "action-ecom/setup/auth.setup.ts",
       "column": 0,
       "line": 0,
       "specs": [
@@ -101,23 +101,23 @@
               "status": "skipped"
             }
           ],
-          "id": "67eb4cc0ed50d5467e87-747527f6a6267948763d",
-          "file": "action/setup/auth.setup.ts",
+          "id": "cdfbad57ccf719c9f4bc-ca0d778fae5a7cedee67",
+          "file": "action-ecom/setup/auth.setup.ts",
           "line": 7,
           "column": 6
         }
       ]
     },
     {
-      "title": "action/tests/address-validation.spec.ts",
-      "file": "action/tests/address-validation.spec.ts",
+      "title": "action-ecom/tests/address-validation.spec.ts",
+      "file": "action-ecom/tests/address-validation.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
           "title": "Address Validation - Boundary Testing (Addition Length) @S7a2d5672",
-          "file": "action/tests/address-validation.spec.ts",
+          "file": "action-ecom/tests/address-validation.spec.ts",
           "line": 48,
           "column": 6,
           "specs": [
@@ -139,8 +139,8 @@
                   "status": "skipped"
                 }
               ],
-              "id": "6dd4977b73409b405f1a-a1cc048564e9ddd430d4",
-              "file": "action/tests/address-validation.spec.ts",
+              "id": "7c2e355b04d11e883cb7-b2cf98b631ef243f6df8",
+              "file": "action-ecom/tests/address-validation.spec.ts",
               "line": 49,
               "column": 7
             }
@@ -151,8 +151,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-12-09T16:42:25.188Z",
-    "duration": 125.702,
+    "startTime": "2025-12-09T16:44:03.444Z",
+    "duration": 197.04499999999996,
     "expected": 0,
     "skipped": 2,
     "unexpected": 0,
