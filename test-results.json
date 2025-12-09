@@ -1,7 +1,7 @@
 {
   "config": {
     "configFile": "/home/chiel/git/test-playground/playwright.config.ts",
-    "rootDir": "/home/chiel/git/test-playground/clients",
+    "rootDir": "/home/chiel/git/test-playground/projects",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -10,7 +10,9 @@
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {},
+    "metadata": {
+      "actualWorkers": 1
+    },
     "preserveOutput": "always",
     "reporter": [
       [
@@ -46,13 +48,15 @@
         "outputDir": "/home/chiel/git/test-playground/test-results",
         "repeatEach": 1,
         "retries": 1,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 1
+        },
         "id": "action-setup",
         "name": "action-setup",
-        "testDir": "/home/chiel/git/test-playground/clients",
+        "testDir": "/home/chiel/git/test-playground/projects",
         "testIgnore": [],
         "testMatch": [
-          "/clients\\/action\\/setup\\/.*\\.setup\\.ts/"
+          "/projects\\/action\\/setup\\/.*\\.setup\\.ts/"
         ],
         "timeout": 30000
       },
@@ -60,13 +64,15 @@
         "outputDir": "/home/chiel/git/test-playground/test-results",
         "repeatEach": 1,
         "retries": 1,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 1
+        },
         "id": "action-chromium",
         "name": "action-chromium",
-        "testDir": "/home/chiel/git/test-playground/clients",
+        "testDir": "/home/chiel/git/test-playground/projects",
         "testIgnore": [],
         "testMatch": [
-          "/clients\\/action\\/tests\\/.*\\.spec\\.ts/"
+          "/projects\\/action\\/tests\\/.*\\.spec\\.ts/"
         ],
         "timeout": 30000
       }
@@ -97,8 +103,62 @@
               "expectedStatus": "passed",
               "projectId": "action-setup",
               "projectName": "action-setup",
-              "results": [],
-              "status": "skipped"
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5821,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Starting authentication flow...\n"
+                    },
+                    {
+                      "text": "Base URL: https://shop-staging.action.com\n"
+                    },
+                    {
+                      "text": "Is staging: \u001b[33mtrue\u001b[39m\n"
+                    },
+                    {
+                      "text": "Current URL after navigation: https://actiondigital.cloudflareaccess.com/cdn-cgi/access/login/shop-staging.action.com?kid=2fcc9198bb4c425c0c7fbc9417bfeab8ea0619ed3abe8cdc1cfa3f2ef9fb2d27&redirect_url=%2Fnl-nl&meta=eyJraWQiOiJlMTdhMmU1NWVhODkwM2I4MTZjMDFkZGJiYWU0NjA2YzkwOTQwMTkwNWU5MmIzNDNjZjE5NWJlZGYyNTVkMjI5IiwiYWxnIjoiUlMyNTYiLCJ0eXAiOiJKV1QifQ.eyJzZXJ2aWNlX3Rva2VuX3N0YXR1cyI6ZmFsc2UsImlhdCI6MTc2NTI5NzYxOCwic2VydmljZV90b2tlbl9pZCI6IiIsImF1ZCI6IjJmY2M5MTk4YmI0YzQyNWMwYzdmYmM5NDE3YmZlYWI4ZWEwNjE5ZWQzYWJlOGNkYzFjZmEzZjJlZjlmYjJkMjciLCJob3N0bmFtZSI6InNob3Atc3RhZ2luZy5hY3Rpb24uY29tIiwiYXBwX3Nlc3Npb25faGFzaCI6ImJlZDZiZTAzNDFmMWQ1NGJjNzk3MmFhYzViZDRlM2ZlY2E0Y2ZlZTJmYjZkMzk0ODNlYzk5MDliYzQ5ZGUyOTgiLCJuYmYiOjE3NjUyOTc2MTgsImlzX3dhcnAiOmZhbHNlLCJpc19nYXRld2F5IjpmYWxzZSwidHlwZSI6Im1ldGEiLCJyZWRpcmVjdF91cmwiOiJcL25sLW5sIiwibXRsc19hdXRoIjp7ImNlcnRfaXNzdWVyX3NraSI6IiIsImNlcnRfcHJlc2VudGVkIjpmYWxzZSwiY2VydF9zZXJpYWwiOiIiLCJjZXJ0X2lzc3Vlcl9kbiI6IiIsImF1dGhfc3RhdHVzIjoiTk9ORSJ9LCJhdXRoX3N0YXR1cyI6Ik5PTkUifQ.U4m94j-hEVkb5yt5LT-Nz6CD4S8iHnA8H0j6DdTnEnAiTW8XjJV9m1xSrH-SssJGfwQBkIserRVg9W7NopeKDYsQw087IrEatX44idpq9DkYvuSKM2Scr9HI2gl8So39QTj_-ZyO-STG5ZZY1ucYFVLM2WBgcl-gCCsMn3c1X0NOMbiHtvq-ZU8rT7VHZOtNJCg0gHaei_Fs-LdnpFP-jXEMAHIPxJ4bp4_IOcNvOkiyjGTjqI4FP2L1cFCAo7OY5zPwungbhQHrDXV2QiWUigGV0jJOrl5l6TtTc4Wwif5YmHQBsnVcJz4gmuF9A7_KsFaECTJXcxgA-gQ6GW_TmA\n"
+                    },
+                    {
+                      "text": "Staging environment detected - performing SSO login...\n"
+                    },
+                    {
+                      "text": "Clicking Azure AD login...\n"
+                    },
+                    {
+                      "text": "Entering username...\n"
+                    },
+                    {
+                      "text": "Entering password...\n"
+                    },
+                    {
+                      "text": "Clicking Yes to stay signed in...\n"
+                    },
+                    {
+                      "text": "Checking for cookie banner...\n"
+                    },
+                    {
+                      "text": "No cookie banner present\n"
+                    },
+                    {
+                      "text": "Authentication successful!\n"
+                    },
+                    {
+                      "text": "Final URL: https://shop-staging.action.com/nl-nl\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-09T16:26:58.805Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
             }
           ],
           "id": "67eb4cc0ed50d5467e87-747527f6a6267948763d",
@@ -116,1467 +176,18 @@
       "specs": [],
       "suites": [
         {
-          "title": "Address Validation - Boundary Testing (Addition Length)",
+          "title": "Address Validation - Boundary Testing (Addition Length) @S7a2d5672",
           "file": "action/tests/address-validation.spec.ts",
-          "line": 31,
+          "line": 36,
           "column": 6,
           "specs": [
             {
-              "title": "AEC-1472: BT-001 - Empty addition should be allowed",
+              "title": "AEC-1472: BT-001 - Empty addition should be allowed @T06611464",
               "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-3ee5246099858087f0f0",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 34,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: BT-002 - Minimum length (1 character)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-88aed691b3607a6d92bf",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 38,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: BT-003 - Just below limit (5 characters)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-ff181a0e55140b00b8c4",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 42,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: BT-004 - Exact limit (6 characters) - boundary value",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-1e6040e55fdd7c1d6af4",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 46,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: BT-005 - Over limit (7 characters)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-f4df1f8a05e468bf64a1",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 50,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: BT-006 - 8 characters",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-85a2b2157073672a9de0",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 54,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: BT-007 - 10 characters",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-4cba9e55f78f47e4cc84",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 58,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: BT-008 - 15 characters - extreme case",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-eb7bba870393933ab899",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 62,
-              "column": 7
-            }
-          ]
-        },
-        {
-          "title": "Address Validation - Boundary Testing (House Number Length)",
-          "file": "action/tests/address-validation.spec.ts",
-          "line": 70,
-          "column": 6,
-          "specs": [
-            {
-              "title": "AEC-1472: BT-101 - Minimum house number",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-164f50ac7c4eb063ea68",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 73,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: BT-102 - 2 digits",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-8a66ff867cdc0d27d49b",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 77,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: BT-103 - 3 digits",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-ddaa8e014f0ee0ff2bb4",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 81,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: BT-104 - 4 digits",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-10fa25b0e53ad8cb905a",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 85,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: BT-105 - 5 digits",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-319d844974c7fc08d7e9",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 89,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: BT-106 - 6 digits - boundary value test",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-0f4d584347589e771894",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 93,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: BT-107 - 7 digits",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-b9cf7d95b6bebdb7d7fc",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 97,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: BT-108 - 8 digits",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-551417235fe82e5fa65b",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 101,
-              "column": 7
-            }
-          ]
-        },
-        {
-          "title": "Address Validation - House Number with Consecutive Characters",
-          "file": "action/tests/address-validation.spec.ts",
-          "line": 109,
-          "column": 6,
-          "specs": [
-            {
-              "title": "AEC-1472: HC-001 - House number + 1 letter (3 total)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-0549b39d0baccb9cabe4",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 112,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: HC-002 - House number + 2 letters (4 total)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-34fd035e6477f6764f50",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 116,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: HC-003 - 5 characters total",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-5750bfe74a1a40e096c0",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 120,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: HC-004 - 6 characters total - boundary value",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-6543562ac071e8299931",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 124,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: HC-005 - 7 characters total - possible bug",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-53bfe9970216300d1193",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 128,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: HC-006 - 8 characters total",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-d34c6d035293c776da99",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 132,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: HC-007 - 9 characters total",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-e03f2dc691a807278ba9",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 136,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: HC-008 - 10 digits",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-8344c3465fa9069ba87f",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 140,
-              "column": 7
-            }
-          ]
-        },
-        {
-          "title": "Address Validation - Realistic Dutch Additions",
-          "file": "action/tests/address-validation.spec.ts",
-          "line": 148,
-          "column": 6,
-          "specs": [
-            {
-              "title": "AEC-1472: NL-001 - Most common addition",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-3357f1f869327a160750",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 151,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NL-002 - 3 characters",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-1ac5391229b82eaeca12",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 155,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NL-003 - 4 characters (occurs in old neighborhoods)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-d222a8526dd20adddc10",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 159,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NL-004 - 5 characters (occurs in old neighborhoods)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-b7c1da47245df4bfd7f0",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 163,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NL-005 - 5 characters - common",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-bd0c0080ef65b537f81a",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 167,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NL-006 - 7 characters - common, known bug",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-39e482510af179d5b6c0",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 171,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NL-007 - 8 characters - common",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-490ecd70e66829ef1389",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 175,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NL-008 - 10 characters - common",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-b229acc757852534887f",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 179,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NL-009 - 5 characters",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-756d1205baa6304b2de2",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 183,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NL-010 - 5 characters",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-b17eeaef22861c452332",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 187,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NL-011 - Roman numeral",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-10ba15c1df7a7d3c73e3",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 191,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NL-012 - Roman numeral",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-bb608ebd634246d8578c",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 195,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NL-013 - 3 characters",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-3eb9c29f6d007d4eead5",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 199,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NL-014 - additional scenario",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-12177430948278694aa2",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 203,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NL-015 - additional scenario",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-137fd2795263a11752eb",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 207,
-              "column": 7
-            }
-          ]
-        },
-        {
-          "title": "Address Validation - Combinations",
-          "file": "action/tests/address-validation.spec.ts",
-          "line": 215,
-          "column": 6,
-          "specs": [
-            {
-              "title": "AEC-1472: CO-001 - Max both fields (11 total)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-30f58401e7a1c7044336",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 218,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: CO-002 - Both at limit (12 total)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-d7a982b518fd4e12a630",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 222,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: CO-003 - Addition over limit",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-fb713ca4321adbe16435",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 226,
-              "column": 7
-            }
-          ]
-        },
-        {
-          "title": "Address Validation - Street Names",
-          "file": "action/tests/address-validation.spec.ts",
-          "line": 234,
-          "column": 6,
-          "specs": [
-            {
-              "title": "AEC-1472: ST-001 - Normal street name",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-309b2d5acd8eaf9543e3",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 237,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: ST-002 - Multiple words",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-87cee614cb5c7fca931e",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 241,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: ST-003 - Apostrophe and hyphen",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-cc4e9cad7bd2f77a8087",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 245,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: ST-004 - Hyphen in name",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-33a21b85c3b70bc738e0",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 249,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: ST-005 - Periods and abbreviations",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-ec25f017ce1b6eba96f7",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 253,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: ST-006 - Very short street name (2 characters)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-0d74402f4cbe0a11517d",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 257,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: ST-007 - Test maximum street name length",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-44c0659ddf55fb9b04ac",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 261,
-              "column": 7
-            }
-          ]
-        },
-        {
-          "title": "Address Validation - Whitespace Handling",
-          "file": "action/tests/address-validation.spec.ts",
-          "line": 269,
-          "column": 6,
-          "specs": [
-            {
-              "title": "AEC-1472: WS-001 - Leading spaces in addition",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-93afa2e40c8b1268b13d",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 272,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: WS-002 - Trailing spaces in addition",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-64e6ca21f1b7edbc9337",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 276,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: WS-003 - Space in addition",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-56a6ed2ed3076418ff6d",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 280,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: WS-004 - Only spaces as addition",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-95e0ef188c35ca4056d0",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 284,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: WS-005 - Leading spaces in street name",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-953700e4573a2d2a8f1f",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 288,
-              "column": 7
-            }
-          ]
-        },
-        {
-          "title": "Address Validation - Empty Fields",
-          "file": "action/tests/address-validation.spec.ts",
-          "line": 296,
-          "column": 6,
-          "specs": [
-            {
-              "title": "AEC-1472: EV-001 - Empty street name",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-7d424d459b7dd3a930a7",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 299,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: EV-002 - Empty house number",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-11ccdd7fd529cf4eef75",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 303,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: EV-003 - Empty addition (optional field)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-b72bd6f255cc244d1c34",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 307,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: EV-004 - All fields empty",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-d5fcb1fafdbdf28e5e20",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 311,
-              "column": 7
-            }
-          ]
-        },
-        {
-          "title": "Address Validation - Special Characters",
-          "file": "action/tests/address-validation.spec.ts",
-          "line": 319,
-          "column": 6,
-          "specs": [
-            {
-              "title": "AEC-1472: SC-001 - Hyphen in addition",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-6bea644b2c248a9302e3",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 322,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: SC-002 - Slash",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-fd989177071985e176b2",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 326,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: SC-003 - Period in addition",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-96147a77e83ccbe9d410",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 330,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: SC-004 - Invalid character @",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-d57b4c5acd004a612d7e",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 334,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: SC-005 - Invalid character #",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-dd58e64a48e98318cb3b",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 338,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: SC-006 - Invalid character $",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-3f64b58fda14d6136970",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 342,
-              "column": 7
-            }
-          ]
-        },
-        {
-          "title": "Address Validation - Numeric Validation",
-          "file": "action/tests/address-validation.spec.ts",
-          "line": 350,
-          "column": 6,
-          "specs": [
-            {
-              "title": "AEC-1472: NV-001 - House number 0",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-3f01b85bd4c2acb963d4",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 353,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NV-002 - Negative house number",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-9495fa5582a0b48b4069",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 357,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NV-003 - Leading zeros",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-6d78ff2e93bbc0ec185f",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 361,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NV-004 - Decimal number",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "6dd4977b73409b405f1a-69889a96cb34b2094a4d",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 365,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NV-005 - Letters in house number field",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "action-chromium",
-                  "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
+              "tags": [
+                "S7a2d5672",
+                "T06611464"
               ],
-              "id": "6dd4977b73409b405f1a-adfa305807d33e3dff5c",
-              "file": "action/tests/address-validation.spec.ts",
-              "line": 369,
-              "column": 7
-            },
-            {
-              "title": "AEC-1472: NV-006 - Numbers in street name",
-              "ok": true,
-              "tags": [],
               "tests": [
                 {
                   "timeout": 30000,
@@ -1584,13 +195,27 @@
                   "expectedStatus": "passed",
                   "projectId": "action-chromium",
                   "projectName": "action-chromium",
-                  "results": [],
-                  "status": "skipped"
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10631,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-09T16:27:05.169Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
                 }
               ],
-              "id": "6dd4977b73409b405f1a-39609ed32b08dd112d72",
+              "id": "6dd4977b73409b405f1a-964b2904c40c30f23e1e",
               "file": "action/tests/address-validation.spec.ts",
-              "line": 373,
+              "line": 37,
               "column": 7
             }
           ]
@@ -1600,10 +225,10 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-12-09T16:09:45.720Z",
-    "duration": 46.85299999999995,
-    "expected": 0,
-    "skipped": 71,
+    "startTime": "2025-12-09T16:26:58.168Z",
+    "duration": 17767.148,
+    "expected": 2,
+    "skipped": 0,
     "unexpected": 0,
     "flaky": 0
   }
