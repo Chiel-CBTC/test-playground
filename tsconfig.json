@@ -9,8 +9,10 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
+    "checkJs": true,
+    "allowJs": true,
     "types": ["node", "@playwright/test"]
   },
-  "include": ["tests/**/*", "playwright.config.ts"],
+  "include": ["tests/**/*", "playwright.config.ts", "projects/**/*"],
   "exclude": ["node_modules"]
 }

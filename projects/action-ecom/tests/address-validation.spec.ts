@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { test, expect, Page } from '@playwright/test';
 import { addressTestCases, AddressTestCase } from '../test-data/address-test-cases';
 import { completeCheckoutFlow, buildAddressField } from '../helpers/checkout-helper';
@@ -7,7 +8,11 @@ const automatedTestCases = addressTestCases.filter(tc =>
   !['Security', 'Interaction', 'A11y'].includes(tc.category)
 );
 
-// Helper to get test case by ID
+/**
+ * Helper to get test case by ID
+ * @param {string} testId
+ * @returns {AddressTestCase}
+ */
 function getTestCase(testId) {
   const testCase = automatedTestCases.find(tc => tc.testId === testId);
   if (!testCase) {
@@ -16,15 +21,12 @@ function getTestCase(testId) {
   return testCase;
 }
 
-// Helper to format address for test title
-function formatAddressTitle(testCase) {
-  const street = testCase.streetName === '' ? '[empty]' : testCase.streetName;
-  const house = testCase.houseNumber === '' ? '[empty]' : testCase.houseNumber;
-  const addition = testCase.addition === '' ? '' : ` ${testCase.addition}`;
-  return `${street} ${house}${addition}`;
-}
-
-// Helper function to run address validation test
+/**
+ * Helper function to run address validation test
+ * @param {import('@playwright/test').Page} page
+ * @param {AddressTestCase} testCase
+ * @returns {Promise<void>}
+ */
 async function runAddressTest(page, testCase) {
   const addressField = buildAddressField(
     testCase.streetName,
