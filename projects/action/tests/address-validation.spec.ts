@@ -1,5 +1,5 @@
-import { test, expect } from '@playwright/test';
-import { addressTestCases } from '../test-data/address-test-cases';
+import { test, expect, Page } from '@playwright/test';
+import { addressTestCases, AddressTestCase } from '../test-data/address-test-cases';
 import { completeCheckoutFlow, buildAddressField } from '../helpers/checkout-helper';
 
 // Filter out categories that shouldn't be automated
@@ -8,12 +8,16 @@ const automatedTestCases = addressTestCases.filter(tc =>
 );
 
 // Helper to get test case by ID
-function getTestCase(testId) {
-  return automatedTestCases.find(tc => tc.testId === testId);
+function getTestCase(testId: string): AddressTestCase {
+  const testCase = automatedTestCases.find(tc => tc.testId === testId);
+  if (!testCase) {
+    throw new Error(`Test case ${testId} not found`);
+  }
+  return testCase;
 }
 
 // Helper to format address for test title
-function formatAddressTitle(testCase) {
+function formatAddressTitle(testCase: AddressTestCase): string {
   const street = testCase.streetName === '' ? '[empty]' : testCase.streetName;
   const house = testCase.houseNumber === '' ? '[empty]' : testCase.houseNumber;
   const addition = testCase.addition === '' ? '' : ` ${testCase.addition}`;
@@ -21,7 +25,7 @@ function formatAddressTitle(testCase) {
 }
 
 // Helper function to run address validation test
-async function runAddressTest(page, testCase) {
+async function runAddressTest(page: Page, testCase: AddressTestCase): Promise<void> {
   const addressField = buildAddressField(
     testCase.streetName,
     testCase.houseNumber,

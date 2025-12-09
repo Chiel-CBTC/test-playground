@@ -10,9 +10,7 @@
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {
-      "actualWorkers": 1
-    },
+    "metadata": {},
     "preserveOutput": "always",
     "reporter": [
       [
@@ -48,9 +46,7 @@
         "outputDir": "/home/chiel/git/test-playground/test-results",
         "repeatEach": 1,
         "retries": 1,
-        "metadata": {
-          "actualWorkers": 1
-        },
+        "metadata": {},
         "id": "action-setup",
         "name": "action-setup",
         "testDir": "/home/chiel/git/test-playground/projects",
@@ -64,9 +60,7 @@
         "outputDir": "/home/chiel/git/test-playground/test-results",
         "repeatEach": 1,
         "retries": 1,
-        "metadata": {
-          "actualWorkers": 1
-        },
+        "metadata": {},
         "id": "action-chromium",
         "name": "action-chromium",
         "testDir": "/home/chiel/git/test-playground/projects",
@@ -103,62 +97,8 @@
               "expectedStatus": "passed",
               "projectId": "action-setup",
               "projectName": "action-setup",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 5676,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "Starting authentication flow...\n"
-                    },
-                    {
-                      "text": "Base URL: https://shop-staging.action.com\n"
-                    },
-                    {
-                      "text": "Is staging: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "Current URL after navigation: https://actiondigital.cloudflareaccess.com/cdn-cgi/access/login/shop-staging.action.com?kid=2fcc9198bb4c425c0c7fbc9417bfeab8ea0619ed3abe8cdc1cfa3f2ef9fb2d27&redirect_url=%2Fnl-nl&meta=eyJraWQiOiJlMTdhMmU1NWVhODkwM2I4MTZjMDFkZGJiYWU0NjA2YzkwOTQwMTkwNWU5MmIzNDNjZjE5NWJlZGYyNTVkMjI5IiwiYWxnIjoiUlMyNTYiLCJ0eXAiOiJKV1QifQ.eyJzZXJ2aWNlX3Rva2VuX3N0YXR1cyI6ZmFsc2UsImlhdCI6MTc2NTI5ODAzNCwic2VydmljZV90b2tlbl9pZCI6IiIsImF1ZCI6IjJmY2M5MTk4YmI0YzQyNWMwYzdmYmM5NDE3YmZlYWI4ZWEwNjE5ZWQzYWJlOGNkYzFjZmEzZjJlZjlmYjJkMjciLCJob3N0bmFtZSI6InNob3Atc3RhZ2luZy5hY3Rpb24uY29tIiwiYXBwX3Nlc3Npb25faGFzaCI6IjY5NTQxOWUwZmZmOTMyOTg2MzIxZDgzZWI2ZDUzOTUzM2E3ZGE5ZTlhMTY2YjMyMjFlZDhiMmZhYmNhMTE2NGYiLCJuYmYiOjE3NjUyOTgwMzQsImlzX3dhcnAiOmZhbHNlLCJpc19nYXRld2F5IjpmYWxzZSwidHlwZSI6Im1ldGEiLCJyZWRpcmVjdF91cmwiOiJcL25sLW5sIiwibXRsc19hdXRoIjp7ImNlcnRfaXNzdWVyX3NraSI6IiIsImNlcnRfcHJlc2VudGVkIjpmYWxzZSwiY2VydF9zZXJpYWwiOiIiLCJjZXJ0X2lzc3Vlcl9kbiI6IiIsImF1dGhfc3RhdHVzIjoiTk9ORSJ9LCJhdXRoX3N0YXR1cyI6Ik5PTkUifQ.tedesitn10QRu3v2gIyLzp2xefW6UjJhHXxZMUPiYcn-xK1X1HTDjgqHaamWuNn9hXzTlsD6lrY2OMU3uRqCfRi2GDWKvcLzWKQiXqP6yAMZwK0acCUcC8rYc8bl6-fFJ6HNc8563iwuDqQsYIBLZIHfokCgL3fGdoEviqAHEoSGoI9nv6Q4SAcAnee0fIf_2VOeVgPbRtfky6SkIFocMunO4_AkC9MP690GzSn0lhPneej1zZtlGMhIhjyjZ_hlXqRTE7szD7rbTTtqB7TisNlNmwfBteVDlVK1qk4HXizkjluc3ZtEoQyj-CUKg2ndSyTru8vuDTPIvzdZs-Vjrw\n"
-                    },
-                    {
-                      "text": "Staging environment detected - performing SSO login...\n"
-                    },
-                    {
-                      "text": "Clicking Azure AD login...\n"
-                    },
-                    {
-                      "text": "Entering username...\n"
-                    },
-                    {
-                      "text": "Entering password...\n"
-                    },
-                    {
-                      "text": "Clicking Yes to stay signed in...\n"
-                    },
-                    {
-                      "text": "Checking for cookie banner...\n"
-                    },
-                    {
-                      "text": "No cookie banner present\n"
-                    },
-                    {
-                      "text": "Authentication successful!\n"
-                    },
-                    {
-                      "text": "Final URL: https://shop-staging.action.com/nl-nl\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2025-12-09T16:33:54.803Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
+              "results": [],
+              "status": "skipped"
             }
           ],
           "id": "67eb4cc0ed50d5467e87-747527f6a6267948763d",
@@ -178,7 +118,7 @@
         {
           "title": "Address Validation - Boundary Testing (Addition Length) @S7a2d5672",
           "file": "action/tests/address-validation.spec.ts",
-          "line": 44,
+          "line": 48,
           "column": 6,
           "specs": [
             {
@@ -195,27 +135,13 @@
                   "expectedStatus": "passed",
                   "projectId": "action-chromium",
                   "projectName": "action-chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 11431,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-12-09T16:34:00.999Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "6dd4977b73409b405f1a-a1cc048564e9ddd430d4",
               "file": "action/tests/address-validation.spec.ts",
-              "line": 45,
+              "line": 49,
               "column": 7
             }
           ]
@@ -225,10 +151,10 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-12-09T16:33:54.269Z",
-    "duration": 18269.31,
-    "expected": 2,
-    "skipped": 0,
+    "startTime": "2025-12-09T16:42:25.188Z",
+    "duration": 125.702,
+    "expected": 0,
+    "skipped": 2,
     "unexpected": 0,
     "flaky": 0
   }
