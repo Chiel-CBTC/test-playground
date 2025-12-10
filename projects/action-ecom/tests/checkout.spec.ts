@@ -68,7 +68,7 @@ test.describe('Checkout Flow @S78f0f203', () => {
     
     // Step 6: Verify redirect to iDeal payment page
     // Determine the expected iDEAL URL pattern based on environment
-    const baseURL = process.env.ACTION_BASE_URL || '';
+    const baseURL = process.env.ACTION_ECOM_BASE_URL || '';
     const isStaging = baseURL.includes('staging');
     
     if (isStaging) {

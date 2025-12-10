@@ -89,7 +89,7 @@ export async function completeCheckoutFlow(
   // Step 6: Verify result based on expected behavior
   if (shouldReachIdeal) {
     // Determine the expected iDEAL URL pattern based on environment
-    const baseURL = process.env.ACTION_BASE_URL || '';
+    const baseURL = process.env.ACTION_ECOM_BASE_URL || '';
     const isStaging = baseURL.includes('staging');
     
     if (isStaging) {
@@ -106,7 +106,7 @@ export async function completeCheckoutFlow(
   } else {
     // Should NOT reach iDeal page (error expected)
     const currentUrl = page.url();
-    const baseURL = process.env.ACTION_BASE_URL || '';
+    const baseURL = process.env.ACTION_ECOM_BASE_URL || '';
     const isStaging = baseURL.includes('staging');
     
     if (isStaging) {

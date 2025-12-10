@@ -27,21 +27,21 @@ export default defineConfig({
     // ACTION ECOM CLIENT
     // ============================
     {
-      name: 'action-setup',
+      name: 'action-ecom-setup',
       testMatch: /projects\/action-ecom\/setup\/.*\.setup\.ts/,
       use: {
-        baseURL: process.env.ACTION_BASE_URL || 'https://shop-staging.action.com',
+        baseURL: process.env.ACTION_ECOM_BASE_URL || 'https://shop-staging.action.com',
       },
     },
     {
-      name: 'action-chromium',
+      name: 'action-ecom-chromium',
       testMatch: /projects\/action-ecom\/tests\/.*\.spec\.ts/,
       use: { 
         ...devices['Desktop Chrome'],
-        baseURL: process.env.ACTION_BASE_URL || 'https://shop-staging.action.com',
+        baseURL: process.env.ACTION_ECOM_BASE_URL || 'https://shop-staging.action.com',
         storageState: 'projects/action-ecom/.auth/user.json',
       },
-      dependencies: ['action-setup'],
+      dependencies: ['action-ecom-setup'],
     },
 
     // ============================

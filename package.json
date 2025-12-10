@@ -7,10 +7,10 @@
     "test:headed": "playwright test --headed",
     "test:serial": "playwright test --workers=1",
     "test:debug": "playwright test --debug",
-    "test:action": "playwright test --project=action-setup --project=action-chromium",
-    "test:action:headed": "playwright test --project=action-setup --project=action-chromium --headed",
-    "test:action:serial": "playwright test --project=action-setup --project=action-chromium --workers=1",
-    "auth:setup:action": "playwright test --project=action-setup --headed"
+    "test:action-ecom": "playwright test --project=action-ecom-setup --project=action-ecom-chromium",
+    "test:action-ecom:headed": "playwright test --project=action-ecom-setup --project=action-ecom-chromium --headed",
+    "test:action-ecom:serial": "playwright test --project=action-ecom-setup --project=action-ecom-chromium --workers=1",
+    "auth:setup:action-ecom": "playwright test --project=action-ecom-setup --headed"
   },
   "keywords": [],
   "author": "",
