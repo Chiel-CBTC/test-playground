@@ -12,7 +12,7 @@ The framework supports multiple clients with isolated:
 - Environment configurations
 
 ### Current Clients
-- **Action** - E-commerce testing suite with checkout and address validation tests
+- **action-ecom** - Action e-commerce testing suite with checkout and address validation tests
 
 ## Setup
 
@@ -33,7 +33,8 @@ cp .env.example .env
 
 Edit `.env` and add your credentials:
 ```
-# Action Client
+# Action E-commerce Client
+ACTION_ECOM_BASE_URL=https://shop-staging.action.com
 SSO_USERNAME=your-email@example.com
 SSO_PASSWORD=your-password
 CHECKOUT_EMAIL=test@example.com
@@ -51,8 +52,8 @@ CHECKOUT_CITY=Amsterdam
 Each client needs to authenticate once:
 
 ```bash
-# Action client
-npm run auth:setup:action
+# Action e-commerce client
+npm run auth:setup:action-ecom
 
 # Future clients
 # npm run auth:setup:client2
@@ -79,14 +80,14 @@ npm run test:debug
 ### Run Tests for Specific Client
 
 ```bash
-# Action client - headless (6 workers in parallel - DEFAULT)
-npm run test:action
+# Action e-commerce client - headless (6 workers in parallel - DEFAULT)
+npm run test:action-ecom
 
-# Action client - with browser visible
-npm run test:action:headed
+# Action e-commerce client - with browser visible
+npm run test:action-ecom:headed
 
-# Action client - serial execution (one at a time, useful for debugging)
-npm run test:action:serial
+# Action e-commerce client - serial execution (one at a time, useful for debugging)
+npm run test:action-ecom:serial
 ```
 
 ### Run Specific Tests
@@ -94,20 +95,20 @@ npm run test:action:serial
 **IMPORTANT:** When using npm scripts, you must use `--` before additional flags to pass arguments correctly to Playwright.
 
 ```bash
-# Run a specific test file for Action client
-npm run test:action clients/action/tests/checkout.spec.ts
+# Run a specific test file for Action e-commerce client
+npm run test:action-ecom projects/action-ecom/tests/checkout.spec.ts
 
 # Run a single test by exact name
-npm run test:action clients/action/tests/address-validation.spec.ts -- -g "BT-001 - Empty addition should be allowed"
+npm run test:action-ecom projects/action-ecom/tests/address-validation.spec.ts -- -g "BT-001"
 
 # Run multiple tests matching a pattern
-npm run test:action clients/action/tests/address-validation.spec.ts -- -g "BT-00"
+npm run test:action-ecom projects/action-ecom/tests/address-validation.spec.ts -- -g "BT-"
 
 # Run all tests in a category
-npm run test:action clients/action/tests/address-validation.spec.ts -- -g "Boundary"
+npm run test:action-ecom projects/action-ecom/tests/address-validation.spec.ts -- -g "Boundary"
 
 # Alternative: Call Playwright directly (no -- needed)
-npx playwright test --headed --project=action-chromium clients/action/tests/address-validation.spec.ts -g "BT-001"
+npx playwright test --headed --project=action-ecom-chromium projects/action-ecom/tests/address-validation.spec.ts -g "BT-001"
 ```
 
 ### Action Client - Address Validation Tests
@@ -136,51 +137,48 @@ The Action client includes 78 automated address validation tests covering:
 
 ```bash
 # Run all boundary tests (headless by default)
-npm run test:action clients/action/tests/address-validation.spec.ts -- -g "^BT-"
+npm run test:action-ecom projects/action-ecom/tests/address-validation.spec.ts -- -g "BT-"
 
 # Run all realistic Dutch address tests (headless by default)
-npm run test:action clients/action/tests/address-validation.spec.ts -- -g "^NL-"
-
-# Run Critical priority tests (headless by default)
-npm run test:action clients/action/tests/address-validation.spec.ts -- -g "Critical"
+npm run test:action-ecom projects/action-ecom/tests/address-validation.spec.ts -- -g "NL-"
 
 # Run all address validation tests (parallel, headless by default)
-npm run test:action clients/action/tests/address-validation.spec.ts
+npm run test:action-ecom projects/action-ecom/tests/address-validation.spec.ts
 
 # Run all address validation tests serially
-npm run test:action:serial clients/action/tests/address-validation.spec.ts
+npm run test:action-ecom:serial projects/action-ecom/tests/address-validation.spec.ts
 ```
 
 **Happy Flow Test:**
 ```bash
 # BT-001 is the recommended happy flow test (headless by default)
-npm run test:action clients/action/tests/address-validation.spec.ts -- -g "BT-001 - Empty addition should be allowed"
+npm run test:action-ecom projects/action-ecom/tests/address-validation.spec.ts -- -g "BT-001"
 ```
 
 ## Project Structure
 
 ```
 .
-├── clients/                        # All client test suites
+├── projects/                       # All client test suites
 │   ├── _template/                  # Template for new clients
 │   │   ├── README.md              # Instructions for adding new clients
 │   │   ├── setup/                 # Authentication setup
-│   │   ├── tests/                 # Test specs
-│   │   ├── helpers/               # Helper functions
-│   │   ├── test-data/             # Test data
-│   │   └── .auth/                 # Auth state (auto-generated)
+│   │   └── tests/                 # Test specs
 │   │
-│   └── action/                    # Action client
+│   └── action-ecom/               # Action e-commerce client
 │       ├── setup/
 │       │   └── auth.setup.ts      # Authentication setup
 │       ├── tests/
 │       │   ├── checkout.spec.ts   # Checkout flow tests
-│       │   ├── address-validation.spec.ts  # Address validation (78 tests)
+│       │   ├── address-validation.spec.ts  # Address validation tests
 │       │   └── main-page.spec.ts  # Main page tests
 │       ├── helpers/
 │       │   └── checkout-helper.ts # Reusable checkout helper
-│       ├── test-data/
-│       │   └── address-test-cases.ts  # Test data
+│       └── test-data/
+│           └── address-test-cases.ts  # Test data
+│
+├── clients/                       # Client-specific auth states
+│   └── action/
 │       └── .auth/
 │           └── user.json          # Auth state (auto-generated)
 │
@@ -207,15 +205,16 @@ npm run test:action clients/action/tests/address-validation.spec.ts -- -g "BT-00
 
 ## Adding a New Client
 
-See `clients/_template/README.md` for detailed instructions on adding a new client.
+See `projects/_template/README.md` for detailed instructions on adding a new client.
 
 Quick steps:
-1. Copy `clients/_template` to `clients/yourclient`
+1. Copy `projects/_template` to `projects/yourclient`
 2. Update authentication setup in `setup/auth.setup.ts`
 3. Add your tests in `tests/`
 4. Update `playwright.config.ts` to add your client projects
 5. Add npm scripts in `package.json`
 6. Add environment variables in `.env`
+7. Create auth directory in `clients/yourclient/.auth/` for storing session state
 
 ## Test Configuration
 
@@ -224,7 +223,8 @@ Quick steps:
 Update your `.env` file with the following variables:
 
 ```bash
-# Action Client
+# Action E-commerce Client
+ACTION_ECOM_BASE_URL=https://shop-staging.action.com
 SSO_USERNAME=your-email@example.com
 SSO_PASSWORD=your-password
 CHECKOUT_EMAIL=test@example.com
@@ -235,6 +235,7 @@ CHECKOUT_POSTCODE=1234AB
 CHECKOUT_CITY=Amsterdam
 
 # Add your other clients here
+# CLIENT2_BASE_URL=...
 # CLIENT2_USERNAME=...
 # CLIENT2_PASSWORD=...
 ```
@@ -247,11 +248,11 @@ CHECKOUT_CITY=Amsterdam
 
 To run with browser visible:
 - Use `npm run test:headed` (all clients)
-- Use `npm run test:action:headed` (Action client only)
+- Use `npm run test:action-ecom:headed` (Action e-commerce client only)
 
 To run tests serially (one at a time) for debugging:
 - Use `npm run test:serial` (all clients)
-- Use `npm run test:action:serial` (Action client only)
+- Use `npm run test:action-ecom:serial` (Action e-commerce client only)
 
 Or modify `playwright.config.ts`:
 ```typescript
@@ -267,9 +268,9 @@ fullyParallel: false,  // Change from true to false
 
 ## Customizing Tests
 
-### Adding New Address Test Cases (Action Client)
+### Adding New Address Test Cases (Action E-commerce Client)
 
-Edit `clients/action/test-data/address-test-cases.ts` to add new test cases:
+Edit `projects/action-ecom/test-data/address-test-cases.ts` to add new test cases:
 
 ```typescript
 { 
@@ -284,11 +285,11 @@ Edit `clients/action/test-data/address-test-cases.ts` to add new test cases:
 }
 ```
 
-The test will be automatically generated in `clients/action/tests/address-validation.spec.ts`.
+Then add the test case to the appropriate test suite in `projects/action-ecom/tests/address-validation.spec.ts`.
 
 ### Creating Custom Tests
 
-Create a new test file in your client's `tests/` directory (e.g., `clients/action/tests/`):
+Create a new test file in your client's `tests/` directory (e.g., `projects/action-ecom/tests/`):
 
 ```typescript
 import { test, expect } from '@playwright/test';
@@ -314,7 +315,7 @@ test('my custom test', async ({ page }) => {
 
 Delete the client's auth file (e.g., `clients/action/.auth/user.json`) and run the auth setup again:
 ```bash
-npm run auth:setup:action
+npm run auth:setup:action-ecom
 ```
 
 ### Can't Find Elements
@@ -359,29 +360,29 @@ All tests save screenshots to help with debugging:
 # Setup
 npm install
 npx playwright install chromium
-npm run auth:setup:action
+npm run auth:setup:action-ecom
 
-# Run all Action tests (headless, parallel)
-npm run test:action
+# Run all Action e-commerce tests (headless, parallel)
+npm run test:action-ecom
 
 # Run with browser visible
-npm run test:action:headed
+npm run test:action-ecom:headed
 
 # Run single test (IMPORTANT: use -- before -g when using npm)
-npm run test:action clients/action/tests/address-validation.spec.ts -- -g "BT-001"
+npm run test:action-ecom projects/action-ecom/tests/address-validation.spec.ts -- -g "BT-001"
 
 # Or use npx directly (no -- needed)
-npx playwright test --project=action-chromium clients/action/tests/address-validation.spec.ts -g "BT-001"
+npx playwright test --project=action-ecom-chromium projects/action-ecom/tests/address-validation.spec.ts -g "BT-001"
 
 # Run category of tests
-npm run test:action clients/action/tests/address-validation.spec.ts -- -g "^BT-"
-npm run test:action clients/action/tests/address-validation.spec.ts -- -g "^NL-"
+npm run test:action-ecom projects/action-ecom/tests/address-validation.spec.ts -- -g "BT-"
+npm run test:action-ecom projects/action-ecom/tests/address-validation.spec.ts -- -g "NL-"
 
 # Run all address validation tests (headless, parallel by default)
-npm run test:action clients/action/tests/address-validation.spec.ts
+npm run test:action-ecom projects/action-ecom/tests/address-validation.spec.ts
 
 # Run serially for debugging
-npm run test:action:serial clients/action/tests/address-validation.spec.ts
+npm run test:action-ecom:serial projects/action-ecom/tests/address-validation.spec.ts
 
 # View results
 npx playwright show-report
@@ -395,7 +396,7 @@ npx playwright show-report
 - All `.auth/` directories are gitignored to keep credentials safe
 - Always use `--` before additional flags when running tests through npm scripts
 - **Tests run headless with 6 parallel workers by default** for maximum speed
-- Use headed mode (`test:action:headed`) to see browser during execution
-- Use serial mode (`test:action:serial`) when debugging specific issues
-- The `clients/_template/` directory provides a starting point for adding new clients
+- Use headed mode (`test:action-ecom:headed`) to see browser during execution
+- Use serial mode (`test:action-ecom:serial`) when debugging specific issues
+- The `projects/_template/` directory provides a starting point for adding new clients
 - Each client can have its own base URL, authentication flow, and test data
