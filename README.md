@@ -38,6 +38,9 @@ PROJECT1_BASE_URL=https://your-app.com
 PROJECT1_USERNAME=your-email@example.com
 PROJECT1_PASSWORD=your-password
 
+# Testomat.io (Optional)
+TESTOMATIO=your-testomat-api-key
+
 # Add credentials for other projects here
 ```
 
@@ -158,6 +161,56 @@ Quick steps:
 6. Add environment variables in `.env`
 7. Create auth directory in `clients/yourproject/.auth/` for storing session state
 
+## Testomat.io Integration
+
+This framework includes integration with [Testomat.io](https://testomat.io) for enhanced test management and reporting.
+
+### What is Testomat.io?
+
+Testomat.io is a test management platform that helps you:
+- Track test execution results across multiple runs
+- Organize and manage test cases
+- Generate comprehensive test reports
+- Monitor test trends and analytics
+- Collaborate with your team on test documentation
+
+### Setup Testomat.io
+
+1. **Create an account** at [testomat.io](https://testomat.io)
+2. **Create a new project** in your Testomat.io dashboard
+3. **Get your API key** from the project settings
+4. **Add the API key** to your `.env` file:
+
+```bash
+TESTOMATIO=your-api-key-here
+```
+
+### How It Works
+
+The framework is configured to automatically send test results to Testomat.io after each test run. The reporter is configured in `playwright.config.ts`:
+
+```typescript
+reporter: [
+  ['@testomatio/reporter/playwright', {
+    apiKey: process.env.TESTOMATIO,
+  }],
+]
+```
+
+### Using Testomat.io (Optional)
+
+Testomat.io integration is **optional**. If you don't configure the `TESTOMATIO` API key:
+- Tests will run normally
+- Results will still be available in Playwright's HTML report
+- You just won't see results in the Testomat.io dashboard
+
+To use Testomat.io:
+1. Configure your API key in `.env`
+2. Run your tests as usual
+3. View results in your Testomat.io dashboard
+
+For more information, visit the [Testomat.io documentation](https://docs.testomat.io).
+
 ## Test Configuration
 
 ### Environment Variables
@@ -174,6 +227,9 @@ PROJECT1_PASSWORD=your-password
 PROJECT2_BASE_URL=https://your-other-app.com
 PROJECT2_USERNAME=your-email@example.com
 PROJECT2_PASSWORD=your-password
+
+# Testomat.io (Optional)
+TESTOMATIO=your-testomat-api-key
 ```
 
 ### Default Test Configuration
