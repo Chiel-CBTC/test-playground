@@ -124,11 +124,6 @@ npx playwright test --headed --project=your-project-chromium projects/your-proje
 │       └── test-data/
 │           └── test-cases.ts      # Test data
 │
-├── clients/                       # Project-specific auth states
-│   └── your-project/
-│       └── .auth/
-│           └── user.json          # Auth state (auto-generated)
-│
 ├── screenshots/                   # Test screenshots (auto-generated)
 ├── playwright.config.ts           # Playwright configuration
 ├── .env                           # Your credentials (not in git)
