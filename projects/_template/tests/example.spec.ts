@@ -8,6 +8,9 @@ test.describe('Example Tests', () => {
     // Example assertions
     await expect(page).toHaveTitle(/Your Expected Title/);
     
+    // Take a screenshot in a subdirectory for this test case
+    await page.screenshot({ path: 'screenshots/example-tests/load-main-page.png', fullPage: true });
+    
     console.log('Test completed successfully');
   });
   
@@ -18,5 +21,8 @@ test.describe('Example Tests', () => {
     // Example interactions
     // await page.getByRole('button', { name: 'Click me' }).click();
     // await expect(page.getByText('Success')).toBeVisible();
+    
+    // Take a screenshot in a subdirectory for this test case
+    // await page.screenshot({ path: 'screenshots/example-tests/page-interaction.png', fullPage: true });
   });
 });

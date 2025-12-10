@@ -39,8 +39,8 @@ async function runAddressTest(page, testCase) {
   
   await completeCheckoutFlow(page, addressField, shouldReachIdeal, expectedErrorMessage, testCase.testId);
   
-  // Take screenshot with test ID in filename
-  const screenshotPath = `screenshots/address-tests/AEC-1472_${testCase.testId}-${testCase.category}.png`;
+  // Take screenshot in subdirectory for this test case
+  const screenshotPath = `screenshots/address-tests/${testCase.testId}/AEC-1472_${testCase.testId}-${testCase.category}.png`;
   await page.screenshot({ 
     path: screenshotPath, 
     fullPage: true,

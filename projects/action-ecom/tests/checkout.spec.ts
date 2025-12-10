@@ -61,7 +61,7 @@ test.describe('Checkout Flow', () => {
     await page.getByLabel('Woonplaats').first().fill(process.env.CHECKOUT_CITY || 'Amsterdam');
     
     // Take a screenshot before submitting
-    await page.screenshot({ path: 'screenshots/checkout-form-filled.png', fullPage: true });
+    await page.screenshot({ path: 'screenshots/checkout-flow/checkout-form-filled.png', fullPage: true });
     
     // Step 5: Click "Betalen met iDEAL" button
     await page.getByRole('button', { name: 'Betalen met iDEAL' }).click();
@@ -84,6 +84,6 @@ test.describe('Checkout Flow', () => {
     }
     
     // Take a screenshot of the payment page
-    await page.screenshot({ path: 'screenshots/ideal-payment-page.png', fullPage: true });
+    await page.screenshot({ path: 'screenshots/checkout-flow/ideal-payment-page.png', fullPage: true });
   });
 });

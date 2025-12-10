@@ -12,7 +12,7 @@ test.describe('Main Page Tests', () => {
     await expect(page).toHaveURL(/.*shop-staging\.action\.com\/nl-nl.*/);
     
     // Take a screenshot for verification
-    await page.screenshot({ path: 'screenshots/main-page.png', fullPage: true });
+    await page.screenshot({ path: 'screenshots/main-page-tests/main-page-access.png', fullPage: true });
   });
 
   test('should be able to interact with the page', async ({ page }) => {
