@@ -49,8 +49,35 @@ export async function completeCheckoutFlow(
   await cartIcon.first().click();
   await page.waitForURL('**/winkelwagen**', { timeout: 10000 });
   
-  // Step 3: Click "Naar bestellen" link
-  await page.getByRole('link', { name: 'Naar bestellen' }).first().click();
+  // Check for cookie banner again before proceeding (it may appear during cart interactions)
+  try {
+    const cookieBanner = page.locator('#cookiepopup-container');
+    if (await cookieBanner.isVisible({ timeout: 2000 })) {
+      const acceptButton = page.getByRole('button', { name: 'Accepteren' });
+      if (await acceptButton.isVisible({ timeout: 1000 })) {
+        await acceptButton.click();
+        await page.waitForTimeout(1000);
+      }
+    }
+  } catch (error) {
+    // Cookie banner not present
+  }
+  
+  // Step 3: Click "Naar bestellen" link with force if cookie banner is still blocking
+  const naarBestellenButton = page.getByRole('link', { name: 'Naar bestellen' }).first();
+  
+  // Try normal click first, if it fails due to interception, try with force
+  try {
+    await naarBestellenButton.click({ timeout: 5000 });
+  } catch (error) {
+    // If click is intercepted by cookie banner, try to dismiss it again or force click
+    try {
+      await page.getByRole('button', { name: 'Accepteren' }).click({ timeout: 1000 });
+      await page.waitForTimeout(500);
+    } catch {}
+    // Force click as last resort
+    await naarBestellenButton.click({ force: true });
+  }
   await page.waitForLoadState('networkidle');
   
   // Step 4: Fill in all form fields

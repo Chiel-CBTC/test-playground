@@ -41,7 +41,14 @@ async function runAddressTest(page, testCase) {
   
   // Take screenshot with test ID in filename
   const screenshotPath = `screenshots/address-tests/AEC-1472_${testCase.testId}-${testCase.category}.png`;
-  await page.screenshot({ path: screenshotPath, fullPage: true });
+  await page.screenshot({ 
+    path: screenshotPath, 
+    fullPage: true,
+    timeout: 5000 // Add timeout to prevent hanging on slow-loading resources
+  }).catch(() => {
+    // If screenshot fails, continue test - screenshot is not critical for validation
+    console.log(`Screenshot failed for ${testCase.testId}, continuing test...`);
+  });
 }
 
 // ============================
