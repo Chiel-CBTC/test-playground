@@ -1,20 +1,13 @@
 import { test as setup } from '@playwright/test';
 
-const authFile = 'clients/yourclient/.auth/user.json';
+const authFile = 'projects/stg-rijn-ijssel/.auth/user.json';
 
 setup('authenticate', async ({ page }) => {
-  console.log('Starting authentication flow...');
+  console.log('No authentication required for STG Rijn-IJssel website');
   
-  // TODO: Replace with your actual authentication flow
-  // Example:
-  // await page.goto('/login');
-  // await page.getByLabel('Username').fill(process.env.CLIENT_USERNAME || '');
-  // await page.getByLabel('Password').fill(process.env.CLIENT_PASSWORD || '');
-  // await page.getByRole('button', { name: 'Login' }).click();
-  // await page.waitForURL('**/dashboard**');
+  // STG Rijn-IJssel website does not require authentication
+  // This setup file creates an empty auth state for consistency
   
-  console.log('Authentication successful!');
-  
-  // Save the authenticated state
+  // Save an empty authenticated state
   await page.context().storageState({ path: authFile });
 });
