@@ -10,7 +10,11 @@
     "test:action-ecom": "playwright test --project=action-ecom-setup --project=action-ecom-chromium",
     "test:action-ecom:headed": "playwright test --project=action-ecom-setup --project=action-ecom-chromium --headed",
     "test:action-ecom:serial": "playwright test --project=action-ecom-setup --project=action-ecom-chromium --workers=1",
-    "auth:setup:action-ecom": "playwright test --project=action-ecom-setup --headed"
+    "auth:setup:action-ecom": "playwright test --project=action-ecom-setup --headed",
+    "test:stg-rijn-ijssel": "playwright test --project=stg-rijn-ijssel-setup --project=stg-rijn-ijssel-chromium",
+    "test:stg-rijn-ijssel:headed": "playwright test --project=stg-rijn-ijssel-setup --project=stg-rijn-ijssel-chromium --headed",
+    "test:stg-rijn-ijssel:serial": "playwright test --project=stg-rijn-ijssel-setup --project=stg-rijn-ijssel-chromium --workers=1",
+    "auth:setup:stg-rijn-ijssel": "playwright test --project=stg-rijn-ijssel-setup --headed"
   },
   "keywords": [],
   "author": "",

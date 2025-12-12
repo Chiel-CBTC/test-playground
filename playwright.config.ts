@@ -45,25 +45,28 @@ export default defineConfig({
     },
 
     // ============================
+    // STG RIJN-IJSSEL CLIENT
+    // ============================
+    {
+      name: 'stg-rijn-ijssel-setup',
+      testMatch: /projects\/stg-rijn-ijssel\/setup\/.*\.setup\.ts/,
+      use: {
+        baseURL: process.env.STG_RIJN_IJSSEL_BASE_URL || 'https://stgrijnijssel.nl',
+      },
+    },
+    {
+      name: 'stg-rijn-ijssel-chromium',
+      testMatch: /projects\/stg-rijn-ijssel\/tests\/.*\.spec\.ts/,
+      use: { 
+        ...devices['Desktop Chrome'],
+        baseURL: process.env.STG_RIJN_IJSSEL_BASE_URL || 'https://stgrijnijssel.nl',
+        storageState: 'projects/stg-rijn-ijssel/.auth/user.json',
+      },
+      dependencies: ['stg-rijn-ijssel-setup'],
+    },
+
+    // ============================
     // ADD OTHER CLIENTS HERE
     // ============================
-    // Example for future client:
-    // {
-    //   name: 'client2-setup',
-    //   testMatch: /projects\/client2\/setup\/.*\.setup\.ts/,
-    //   use: {
-    //     baseURL: 'https://example-client2.com',
-    //   },
-    // },
-    // {
-    //   name: 'client2-chromium',
-    //   testMatch: /projects\/client2\/tests\/.*\.spec\.ts/,
-    //   use: { 
-    //     ...devices['Desktop Chrome'],
-    //     baseURL: 'https://example-client2.com',
-    //     storageState: 'projects/client2/.auth/user.json',
-    //   },
-    //   dependencies: ['client2-setup'],
-    // },
   ],
 });
