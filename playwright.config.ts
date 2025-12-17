@@ -48,21 +48,12 @@ export default defineConfig({
     // STG RIJN-IJSSEL CLIENT
     // ============================
     {
-      name: 'stg-rijn-ijssel-setup',
-      testMatch: /projects\/stg-rijn-ijssel\/setup\/.*\.setup\.ts/,
-      use: {
-        baseURL: process.env.STG_RIJN_IJSSEL_BASE_URL || 'https://stgrijnijssel.nl',
-      },
-    },
-    {
       name: 'stg-rijn-ijssel-chromium',
       testMatch: /projects\/stg-rijn-ijssel\/tests\/.*\.spec\.ts/,
       use: { 
         ...devices['Desktop Chrome'],
         baseURL: process.env.STG_RIJN_IJSSEL_BASE_URL || 'https://stgrijnijssel.nl',
-        storageState: 'projects/stg-rijn-ijssel/.auth/user.json',
       },
-      dependencies: ['stg-rijn-ijssel-setup'],
     },
 
     // ============================
