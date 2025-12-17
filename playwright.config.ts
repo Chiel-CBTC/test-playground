@@ -13,9 +13,9 @@ export default defineConfig({
     ['list'], // Shows test progress one by one in terminal
     ['html', { open: 'never' }], // Generate HTML report but don't auto-open
     ['json', { outputFile: 'test-results.json' }], // JSON results for analysis
-    ['@testomatio/reporter/playwright', {
-      apiKey: process.env.TESTOMATIO,
-    }],
+    // ['@testomatio/reporter/playwright', {
+    //   apiKey: process.env.TESTOMATIO,
+    // }],
   ],
   use: {
     trace: 'on-first-retry',
